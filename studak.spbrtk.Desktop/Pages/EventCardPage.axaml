@@ -1,0 +1,312 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+             x:CompileBindings="False"
+             x:Class="studak.spbrtk.Desktop.Pages.EventCardPage">
+    
+    <UserControl.Styles>
+        <Style Selector="TextBlock.h1">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="40"/>
+        </Style>
+        
+        <Style Selector="TextBlock.ElementsHeader">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Regular" />
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
+        <Style Selector="TextBlock.Headers">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
+        
+        <Style Selector="TextBlock.Values">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Regular" />
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
+        <Style Selector="TextBlock.TableHeaders">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
+        <Style Selector="TextBlock.Elements">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        
+        <Style Selector="ComboBox">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
+        <Style Selector="Button.Nav">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="Background" Value="#8959EF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="CornerRadius" Value="50"/>
+        </Style>
+        
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#00FF0000" />
+        </Style>
+        
+    </UserControl.Styles>
+    
+    <Grid Background="#F4F4FC"
+          ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+               HorizontalAlignment="Left"
+               Source="../Assets/LeftBar.png"/>
+        
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                    Orientation="Vertical"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/activists-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="ActivistsNavBtn"
+                        Click="ActivistsNavBtn_OnClick"
+                        Content="Активисты"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/events-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="EventsNavBtn"
+                        Click="EventsNavBtn_OnClick"
+                        Content="Мероприятия"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/kpi-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="KpiNavBtn"
+                        Content="Рейтинг"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/docs-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="DocsNavBtn"
+                        Content="Документы"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom">
+            <Image Source="../Assets/line-bottom-nav.png"
+                   Width="200"
+                   Margin="0 0 0 20"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0 0 0 50">
+                <Image Source="../Assets/settings-nav.png"
+                       Height="30"/>
+                <Button Classes="Nav"
+                        FontSize="20"
+                        x:Name="SettingsNavBtn"
+                        Content="Настройки"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Grid.Row="1"
+                    Margin="30 0 0 0"
+                    Orientation="Horizontal">
+            <Button Background="Transparent"
+                    x:Name="BackArrowBtn"
+                    Click="BackArrowBtn_OnClick">
+                <Image Source="../Assets/back-arrow-btn.png"
+                       Height="50"/>
+            </Button>
+            <TextBlock x:Name="TitleTextBlock"
+                       Margin="10 0 0 0"
+                       VerticalAlignment="Center"
+                       Text="Название мероприятия"
+                       Classes="h1"/>
+            <Image Source="../Assets/delete-btn.png"
+                   Margin="50 0 0 0"
+                   Height="40"/>
+            <Button Content="Удалить мероприятие"
+                    x:Name="DeleteEventBtn"
+                    Click="DeleteEventBtn_OnClick"
+                    FontFamily="Montserrat"
+                    FontSize="20"
+                    Classes="TableHeaders"
+                    Background="Transparent"
+                    VerticalAlignment="Center"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Grid.Row="2"
+                    Orientation="Vertical"
+                    Margin="110 20 0 0">
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 15">
+                <TextBlock Text="Место:"
+                           Classes="Headers"/>
+                <TextBlock Text="не определено"
+                           x:Name="PlaceTextBlock"
+                           TextWrapping="Wrap"
+                           Classes="Values"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 15">
+                <TextBlock Text="Дата:"
+                           Classes="Headers"/>
+                <TextBlock Text="27 января 2024 12:50"
+                           x:Name="DateTextBlock"
+                           TextWrapping="Wrap"
+                           Classes="Values"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 40">
+                <TextBlock Text="Баллы:"
+                           Classes="Headers"/>
+                <TextBlock Text="40 баллов"
+                           x:Name="RateTextBlock"
+                           TextWrapping="Wrap"
+                           Classes="Values"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <TextBlock Text="Описание:"
+                           FontSize="20"
+                           Classes="Headers"/>
+                <TextBlock Text="Возложение приурочено к празднованию 80-летия прорыва блокады Ленинграда.
+  Функционал волонтеров:  Координация гостей, сопровождение ветеранов, помощь в навигации СМИ.  На мероприятии будут присутствовать: Руководитель регионального отделения «Молодой Гвардии» Санкт-Петербурга -  Александр Сергеевич Маликов; Руководитель аппарата «Молодой Гвардии» Санкт-Петербурга - Тигран Мартинович Мануков
+Мероприятие будет активно освещаться в СМИ!"
+                           x:Name="DescriptionTextBlock"
+                           FontSize="20"
+                           TextWrapping="Wrap"
+                           Classes="Values"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <TextBlock Text="Организатор:"
+                           FontSize="20"
+                           Classes="Headers"/>
+                <TextBlock Text="Мария Сергеевна Беляева — педагог-организатор"
+                           x:Name="ResponsibleTextBlock"
+                           TextWrapping="Wrap"
+                           FontSize="20"
+                           Classes="Values"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <TextBlock Text="Статус мероприятия:"
+                           FontSize="20"
+                           Classes="Headers"/>
+                <TextBlock Text="ИДЁТ НАБОР УЧАСТНИКОВ"
+                           x:Name="EventStatusTextBlock"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           TextWrapping="Wrap"
+                           Classes="Values"/>
+                <Button Background="Transparent"
+                        x:Name="EventOpenCloseBtn"
+                        Click="EventOpenCloseBtn_OnClick"
+                        Margin="30 0 0 0">
+                    <Image Source="../Assets/close-event-btn.png"
+                           x:Name="EventOpenCloseImage"
+                           Height="41"
+                           VerticalAlignment="Center"/>
+                </Button>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Участники (0)"
+                           x:Name="ActivistsCountTextBlock"
+                           Margin="0 77 0 20"
+                           VerticalAlignment="Center"
+                           Classes="h1"/>
+                <Button Background="#F4F4FC"
+                        x:Name="OrderBtn"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"
+                        Padding="0 0 0 15"
+                        Margin="180 0 0 0">
+                    <Image Source="../Assets/create-order-available-btn.png"
+                           x:Name="OrderCreateImage"
+                           Height="58"/>
+                </Button>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Classes="TableHeaders"
+                           Text="ФИО"
+                           Width="300"/>
+                <TextBlock Classes="TableHeaders"
+                           Text="ГРУППА"
+                           Width="200"/>
+                <TextBlock Classes="TableHeaders"
+                           Text="СТАТУС"
+                           Width="400"/>
+            </StackPanel>
+            
+            <ListBox x:Name="InvolvementListBox"
+                     SelectionChanged="InvolvementListBox_OnSelectionChanged"
+                     Margin="-10 40 270 0"
+                     Background="Transparent">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Width="300">
+                                        <TextBlock Text="{Binding Surname}"
+                                                   Classes="Elements"/>
+                                        <TextBlock Text="{Binding Name}"
+                                                   Classes="Elements"/>
+                                        <TextBlock Text="{Binding Patronymic}"
+                                                   Classes="Elements"/>
+                                    </StackPanel>
+                            
+                                    <TextBlock Text="{Binding Group}"
+                                               Classes="Elements"
+                                               Width="200"/>
+                                    <TextBlock Text="{Binding Status}"
+                                               TextWrapping="Wrap"
+                                               Classes="Elements"
+                                               Width="400"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

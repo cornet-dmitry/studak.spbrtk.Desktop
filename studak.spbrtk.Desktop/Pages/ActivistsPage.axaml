@@ -1,0 +1,244 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:CompileBindings="False"
+             x:Class="studak.spbrtk.Desktop.Pages.ActivistsPage">
+    
+    <UserControl.Resources>
+    </UserControl.Resources>
+    
+    <UserControl.Styles>
+        <Style Selector="TextBlock.h1">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="40"/>
+        </Style>
+        
+        <Style Selector="TextBlock.Elements">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        
+        <Style Selector="TextBlock.TableHeaders">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
+        <Style Selector="Button.Nav">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="Background" Value="#8959EF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="CornerRadius" Value="50"/>
+        </Style>
+        
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#00FF0000" />
+        </Style>
+        
+    </UserControl.Styles>
+    
+    <Grid Background="#F4F4FC"
+          ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+               HorizontalAlignment="Left"
+               Source="../Assets/LeftBar.png"/>
+        
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                    Orientation="Vertical"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/activists-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="ActivistsNavBtn"
+                        Content="Активисты"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/events-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="EventsNavBtn"
+                        Click="EventsNavBtn_OnClick"
+                        Content="Мероприятия"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/kpi-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="KpiNavBtn"
+                        Content="Рейтинг"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/docs-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="DocsNavBtn"
+                        Content="Документы"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom">
+            <Image Source="../Assets/line-bottom-nav.png"
+                   Width="200"
+                   Margin="0 0 0 20"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0 0 0 50">
+                <Image Source="../Assets/settings-nav.png"
+                       Height="30"/>
+                <Button Classes="Nav"
+                        FontSize="20"
+                        x:Name="SettingsNavBtn"
+                        Content="Настройки"/>
+            </StackPanel>
+        </StackPanel>
+        
+        
+       <StackPanel Grid.Column="1" Grid.Row="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <Image Source="../Assets/RectangleSearch.png"
+                   Height="113"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Grid.Row="0"
+                    Margin="300 0 0 0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Orientation="Horizontal">
+            
+            <Image Source="../Assets/search.png"
+                   Height="30"
+                   Margin="0 0 20 0"/>
+        
+            <TextBox x:Name="SearchTextBox"
+                     Watermark="Поиск"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Height="55"
+                     Width="600"
+                     FontFamily="Montserrat"
+                     FontWeight="Light"
+                     FontSize="24">
+            </TextBox>
+            
+            
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        Margin="10 0 0 0">
+                
+                <Button x:Name="NotificationButton"
+                        Height="60">
+                    <Image Source="../Assets/notification.png"/>
+                </Button>
+                
+                <StackPanel Orientation="Vertical"
+                            Margin="20 0 0 0">
+                    <TextBlock Text="Иван Иванов"
+                               Classes="h1"
+                               HorizontalAlignment="Right"
+                               FontSize="24"
+                               FontWeight="Bold"/>
+                    <TextBlock Text="Администратор"
+                               Classes="h1"
+                               HorizontalAlignment="Right"
+                               FontSize="20"
+                               FontWeight="Regular"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel Margin="20 0 0 0"
+                        VerticalAlignment="Center">
+                <Image Source="../Assets/UserPhoto.png"
+                       Height="70"/>
+            </StackPanel>
+            
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Grid.Row="1"
+                    Orientation="Vertical">
+            
+            <TextBlock Classes="h1"
+                       Text="Активисты"
+                       Margin="50"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Grid.Row="2"
+                    Orientation="Horizontal"
+                    Margin="50 0 0 0">
+            <TextBlock Classes="TableHeaders"
+                       Text="ФИО"
+                       Width="300"/>
+            <TextBlock Classes="TableHeaders"
+                       Text="ГРУППА"
+                       Width="200"/>
+            <TextBlock Classes="TableHeaders"
+                       Text="СТАТУС"
+                       Width="400"/>
+            <TextBlock Classes="TableHeaders"
+                       Text="РЕЙТИНГ"
+                       Width="200"/>
+        </StackPanel>
+        
+        <ListBox Grid.Column="1" Grid.Row="2"
+                 x:Name="ActivistsListBox"
+                 Background="Transparent"
+                 Width="1000"
+                 SelectionChanged="ActivistsListBox_OnSelectionChanged"
+                 HorizontalAlignment="Left"
+                 Margin="40 60 0 0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="0 0 0 10">
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Width="300">
+                                <TextBlock Text="{Binding Surname}"
+                                           Classes="Elements"/>
+                                <TextBlock Text="{Binding Name}"
+                                           Classes="Elements"/>
+                                <TextBlock Text="{Binding Patronymic}"
+                                           Classes="Elements"/>
+                            </StackPanel>
+                            
+                            <TextBlock Text="{Binding Group}"
+                                       Classes="Elements"
+                                       Width="200"/>
+                            <TextBlock Text="{Binding Status}"
+                                       TextWrapping="Wrap"
+                                       Classes="Elements"
+                                       Width="400"/>
+                            <TextBlock Text="{Binding Kpi}"
+                                       Classes="Elements"
+                                       Width="200"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+    
+</UserControl>

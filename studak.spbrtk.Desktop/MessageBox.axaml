@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avaloniaGif="clr-namespace:AvaloniaGif;assembly=AvaloniaGif"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300"
+        x:Class="studak.spbrtk.Desktop.MessageBox"
+        Width="600"
+        Height="300"
+        CanResize="False"
+        Icon="../Assets/error-ico.png"
+        Title="ОШИБКА">
+    
+        <StackPanel Orientation="Horizontal"
+                    Margin="5">
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center">
+                <Image Source="../Assets/error-gif.gif"
+                       Height="200"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"/>
+                
+                <Button Content="ОК"
+                        Width="70"
+                        Margin="5"
+                        Background="#8959EF"
+                        Foreground="White"
+                        FontFamily="Montserrat"
+                        FontWeight="Bold"
+                        FontSize="30"
+                        HorizontalContentAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        x:Name="Button"
+                        Click="Button_OnClick"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Плаки-плаки"
+                           Margin="20 0 0 0"
+                           FontFamily="Montserrat"
+                           FontWeight="Bold"
+                           FontSize="30"/>
+                <TextBlock Text="Сообщение об ошибке"
+                           x:Name="ErrorMessageTextBlock"
+                           Width="400"
+                           TextWrapping="Wrap"
+                           Margin="20 5 0 0"
+                           FontFamily="Montserrat"
+                           FontWeight="Regular"
+                           FontSize="14"/>
+            </StackPanel>
+        </StackPanel>
+        
+</Window>

@@ -1,0 +1,81 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="studak.spbrtk.Desktop.Pages.WelcomePage">
+    
+    <UserControl.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="40"/>
+        </Style>
+        
+        <Style Selector="TextBox">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontWeight" Value="Regular"/>
+            <Setter Property="Width" Value="600"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#7A7A7E"/>
+            <Setter Property="CornerRadius" Value="50"/>
+            <Setter Property="FontSize" Value="36"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Button">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Background" Value="#8959EF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="CornerRadius" Value="50"/>
+            <Setter Property="Width" Value="400"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        
+    </UserControl.Styles>
+    
+    <Grid Background="#F4F4FC"
+          ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+               HorizontalAlignment="Left"
+               Source="../Assets/LeftBar.png"/>
+        
+        <TextBlock Grid.Column="1" Grid.Row="0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"
+                   Text="Добро пожаловать в информационную систему 
+автоматизации работы с мероприятиями 
+и учёта рейтинга активистов  
+Радиотехнического колледжа СТУДАК" />
+        
+        <StackPanel Grid.Column="1" Grid.Row="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            
+            <TextBlock Text="Авторизируйтесь для работы с сервисом"
+                       Margin="0 0 0 30"/>
+            <TextBox Watermark="Логин"
+                     Margin="0 0 0 10"/>
+            <TextBox Watermark="Пароль"
+                     Margin="0 0 0 30"/>
+            <Button Content="ВОЙТИ"/>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

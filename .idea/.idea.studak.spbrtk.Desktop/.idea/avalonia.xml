@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="studak.spbrtk.Desktop/App.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
+        <entry key="studak.spbrtk.Desktop/MainWindow.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
+        <entry key="studak.spbrtk.Desktop/MessageBox.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
+        <entry key="studak.spbrtk.Desktop/Pages/ActivistCardPage.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
+        <entry key="studak.spbrtk.Desktop/Pages/ActivistsPage.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
+        <entry key="studak.spbrtk.Desktop/Pages/CreateEventPage.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
+        <entry key="studak.spbrtk.Desktop/Pages/EventCardPage.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
+        <entry key="studak.spbrtk.Desktop/Pages/EventsPage.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
+        <entry key="studak.spbrtk.Desktop/Pages/WelcomePage.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

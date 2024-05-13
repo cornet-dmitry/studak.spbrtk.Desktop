@@ -1,0 +1,116 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.0.2"/>
+        <PackageReference Include="Avalonia.Desktop" Version="11.0.2"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.2"/>
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.2"/>
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.2"/>
+        <PackageReference Include="Avalonia_Gif" Version="1.0.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <None Remove="Assets\LeftBar.png" />
+      <AvaloniaResource Include="Assets\LeftBar.png" />
+      <None Remove="Fonts\Montserrat-Black.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-Black.ttf" />
+      <None Remove="Fonts\Montserrat-BlackItalic.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-BlackItalic.ttf" />
+      <None Remove="Fonts\Montserrat-Bold.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-Bold.ttf" />
+      <None Remove="Fonts\Montserrat-BoldItalic.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-BoldItalic.ttf" />
+      <None Remove="Fonts\Montserrat-ExtraBold.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-ExtraBold.ttf" />
+      <None Remove="Fonts\Montserrat-ExtraBoldItalic.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-ExtraBoldItalic.ttf" />
+      <None Remove="Fonts\Montserrat-ExtraLight.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-ExtraLight.ttf" />
+      <None Remove="Fonts\Montserrat-ExtraLightItalic.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-ExtraLightItalic.ttf" />
+      <None Remove="Fonts\Montserrat-Italic.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-Italic.ttf" />
+      <None Remove="Fonts\Montserrat-Light.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-Light.ttf" />
+      <None Remove="Fonts\Montserrat-LightItalic.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-LightItalic.ttf" />
+      <None Remove="Fonts\Montserrat-Medium.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-Medium.ttf" />
+      <None Remove="Fonts\Montserrat-MediumItalic.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-MediumItalic.ttf" />
+      <None Remove="Fonts\Montserrat-Regular.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-Regular.ttf" />
+      <None Remove="Fonts\Montserrat-SemiBold.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-SemiBold.ttf" />
+      <None Remove="Fonts\Montserrat-SemiBoldItalic.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-SemiBoldItalic.ttf" />
+      <None Remove="Fonts\Montserrat-Thin.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-Thin.ttf" />
+      <None Remove="Fonts\Montserrat-ThinItalic.ttf" />
+      <AvaloniaResource Include="Fonts\Montserrat-ThinItalic.ttf" />
+      <None Remove="Assets\Instagram-post-20.ico" />
+      <AvaloniaResource Include="Assets\studak.ico" />
+      <None Remove="Assets\search.png" />
+      <AvaloniaResource Include="Assets\search.png" />
+      <AvaloniaResource Include="Assets\notification.png" />
+      <None Remove="Assets\UserPhoto.png" />
+      <AvaloniaResource Include="Assets\UserPhoto.png" />
+      <None Remove="Assets\notification.png" />
+      <AvaloniaResource Include="Assets\notification.png" />
+      <None Remove="Assets\RectangleSearch.png" />
+      <None Remove="Assets\activists-btn.png" />
+      <AvaloniaResource Include="Assets\activists-nav-btn.png" />
+      <None Remove="Assets\events-btn.png" />
+      <AvaloniaResource Include="Assets\events-nav-btn.png" />
+      <None Remove="Assets\kpi-nav-btn.png" />
+      <AvaloniaResource Include="Assets\kpi-nav-btn.png" />
+      <None Remove="Assets\docs-nav-btn.png" />
+      <AvaloniaResource Include="Assets\docs-nav-btn.png" />
+      <None Remove="Assets\line-bottom-nav.png" />
+      <AvaloniaResource Include="Assets\line-bottom-nav.png" />
+      <None Remove="Assets\settings-nav.png" />
+      <AvaloniaResource Include="Assets\settings-nav.png" />
+      <None Remove="Assets\back-arrow-btn.png" />
+      <AvaloniaResource Include="Assets\back-arrow-btn.png" />
+      <None Remove="Assets\user-photo-plug.png" />
+      <AvaloniaResource Include="Assets\user-photo-plug.png" />
+      <None Remove="Assets\tg-icon.png" />
+      <AvaloniaResource Include="Assets\tg-icon.png" />
+      <None Remove="Assets\vk-icon.png" />
+      <AvaloniaResource Include="Assets\vk-icon.png" />
+      <None Remove="Assets\create-event-btn.png" />
+      <AvaloniaResource Include="Assets\create-event-btn.png" />
+      <None Remove="Assets\close-event-btn.png" />
+      <AvaloniaResource Include="Assets\close-event-btn.png" />
+      <None Remove="Assets\open-event-btn.png" />
+      <AvaloniaResource Include="Assets\open-event-btn.png" />
+      <None Remove="Assets\error-gif.gif" />
+      <AvaloniaResource Include="Assets\error-gif.gif" />
+      <None Remove="Assets\error-ico.png" />
+      <AvaloniaResource Include="Assets\error-ico.png" />
+      <None Remove="Assets\create-order-available-btn.png" />
+      <AvaloniaResource Include="Assets\create-order-available-btn.png" />
+      <None Remove="Assets\create-order-unavailable-btn.png" />
+      <AvaloniaResource Include="Assets\create-order-unavailable-btn.png" />
+      <None Remove="Assets\delete-btn.png" />
+      <None Remove="Assets\trash_delete_recycle_bin_remove_icon_144070 (1).png" />
+      <AvaloniaResource Include="Assets\delete-btn.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <AvaloniaResource Include="Assets\RectangleSearch.png" />
+    </ItemGroup>
+</Project>
