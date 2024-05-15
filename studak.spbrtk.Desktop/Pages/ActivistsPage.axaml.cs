@@ -136,4 +136,9 @@ public partial class ActivistsPage : UserControl
     {
         Navigation.NavigateTo(new EventsPage());
     }
+
+    private void CreateEventBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigation.NavigateTo(new AddUserPage());
+    }
 }

@@ -1,0 +1,371 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+             x:Class="studak.spbrtk.Desktop.Pages.AddUserPage">
+    
+    <UserControl.Styles>
+        <Style Selector="TextBlock.h1">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="40"/>
+        </Style>
+        
+        <Style Selector="TextBlock.Headers">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
+        <Style Selector="TextBlock.Values">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
+        <Style Selector="TextBlock.SocialMedia">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
+        <Style Selector="Button.Nav">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="Background" Value="#8959EF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="CornerRadius" Value="50"/>
+        </Style>
+        
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#00FF0000" />
+        </Style>
+        
+    </UserControl.Styles>
+    
+    <Grid Background="#F4F4FC"
+          ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+               HorizontalAlignment="Left"
+               Source="../Assets/LeftBar.png"/>
+        
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                    Orientation="Vertical"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/activists-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="ActivistsNavBtn"
+                        Content="Активисты"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/events-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="EventsNavBtn"
+                        Click="EventsNavBtn_OnClick"
+                        Content="Мероприятия"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/kpi-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="KpiNavBtn"
+                        Content="Рейтинг"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/docs-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="DocsNavBtn"
+                        Content="Документы"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom">
+            <Image Source="../Assets/line-bottom-nav.png"
+                   Width="200"
+                   Margin="0 0 0 20"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0 0 0 50">
+                <Image Source="../Assets/settings-nav.png"
+                       Height="30"/>
+                <Button Classes="Nav"
+                        FontSize="20"
+                        x:Name="SettingsNavBtn"
+                        Content="Настройки"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Grid.Row="0"
+                    Margin="30 0 0 0"
+                    Orientation="Horizontal">
+            <Button Background="Transparent"
+                    x:Name="BackArrowBtn"
+                    Click="BackArrowBtn_OnClick">
+                <Image Source="../Assets/back-arrow-btn.png"
+                       Height="50"/>
+            </Button>
+            <TextBlock x:Name="FIOTextBlock"
+                       Margin="10 0 0 0"
+                       VerticalAlignment="Center"
+                       Text="ДОБАВИТЬ АКТИВИСТА"
+                       Classes="h1"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Grid.Row="2"
+                    HorizontalAlignment="Center"
+                    Margin="110 60 0 0"
+                    Orientation="Vertical">
+            <!--ФАМИЛИЯ-->
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 20">
+                <TextBlock Text="Фамилия:"
+                           Width="200"
+                           VerticalAlignment="Center"
+                           Classes="Headers"/>
+                <TextBox Watermark="Иванов"
+                         x:Name="SurnameTextBox"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Height="60"
+                         Width="800"
+                         Padding="35 0 35 0"
+                         Background="#E2E2FF"
+                         CornerRadius="50"
+                         FontFamily="Montserrat"
+                         FontWeight="Light"
+                         FontSize="24"/>
+            </StackPanel>
+            
+            <!--ИМЯ-->
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 20">
+                <TextBlock Text="Имя:"
+                           Width="200"
+                           VerticalAlignment="Center"
+                           Classes="Headers"/>
+                <TextBox Watermark="Иван"
+                         x:Name="NameTextBox"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Height="60"
+                         Width="800"
+                         Padding="35 0 35 0"
+                         Background="#E2E2FF"
+                         CornerRadius="50"
+                         FontFamily="Montserrat"
+                         FontWeight="Light"
+                         FontSize="24"/>
+            </StackPanel>
+            
+            <!--ОТЧЕСТВО-->
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 20">
+                <TextBlock Text="Отчество:"
+                           Width="200"
+                           VerticalAlignment="Center"
+                           Classes="Headers"/>
+                <TextBox Watermark="Иванович"
+                         x:Name="PatrTextBox"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Height="60"
+                         Width="800"
+                         Padding="35 0 35 0"
+                         Background="#E2E2FF"
+                         CornerRadius="50"
+                         FontFamily="Montserrat"
+                         FontWeight="Light"
+                         FontSize="24"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <!--ГРУППА-->
+                <StackPanel Orientation="Horizontal"
+                            Margin="0 0 50 20">
+                    <TextBlock Text="Группа:"
+                               Width="200"
+                               VerticalAlignment="Center"
+                               Classes="Headers"/>
+                    <TextBox Watermark="ИП1-21-1"
+                             x:Name="GroupTextBox"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             HorizontalAlignment="Left"
+                             Height="60"
+                             Width="150"
+                             Background="#E2E2FF"
+                             CornerRadius="50"
+                             FontFamily="Montserrat"
+                             FontWeight="Light"
+                             FontSize="24"/>
+                </StackPanel>
+            
+                <!--ДАТА РОЖДЕНИЯ-->
+                <StackPanel Orientation="Horizontal"
+                            Margin="0 0 0 20">
+                    <TextBlock Text="Дата рождения:"
+                               TextWrapping="Wrap"
+                               Width="200"
+                               VerticalAlignment="Center"
+                               Classes="Headers"/>
+                    <DatePicker Height="60"
+                                Width="400"
+                                x:Name="DatePicker"
+                                HorizontalAlignment="Left"
+                                Background="#E2E2FF"
+                                CornerRadius="50"
+                                FontFamily="Montserrat"
+                                FontWeight="Light"
+                                FontSize="24"
+                                Margin="0 0 20 0"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <!--НОМЕР ТЕЛЕФОНА-->
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 20">
+                <TextBlock Text="Телефон:"
+                           Width="200"
+                           VerticalAlignment="Center"
+                           Classes="Headers"/>
+                <MaskedTextBox Mask="+7 (000) 000-00-00"
+                               x:Name="PhoneTextBox"
+                               VerticalContentAlignment="Center"
+                               HorizontalAlignment="Left"
+                               Height="60"
+                               Width="800"
+                               Padding="35 0 35 0"
+                               Background="#E2E2FF"
+                               CornerRadius="50"
+                               FontFamily="Montserrat"
+                               FontWeight="Light"
+                               FontSize="24"/>
+            </StackPanel>
+            
+            <!--ЭЛЕКТРОННАЯ ПОЧТА-->
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 20">
+                <TextBlock Text="Почта:"
+                           Width="200"
+                           VerticalAlignment="Center"
+                           Classes="Headers"/>
+                <TextBox Watermark="you@mail.ru"
+                         x:Name="EmailTextBox"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Height="60"
+                         Width="800"
+                         Padding="35 0 35 0"
+                         Background="#E2E2FF"
+                         CornerRadius="50"
+                         FontFamily="Montserrat"
+                         FontWeight="Light"
+                         FontSize="24"/>
+            </StackPanel>
+            
+            <!--ВК-->
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 20">
+                <TextBlock Text="Ссылка на ВК:"
+                           Width="200"
+                           VerticalAlignment="Center"
+                           Classes="Headers"/>
+                <TextBox Watermark="https://vk.com/studakspb"
+                         x:Name="VKTextBox"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Height="60"
+                         Width="800"
+                         Padding="35 0 35 0"
+                         Background="#E2E2FF"
+                         CornerRadius="50"
+                         FontFamily="Montserrat"
+                         FontWeight="Light"
+                         FontSize="24"/>
+            </StackPanel>
+            
+            <!--ТГ-->
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 20">
+                <TextBlock Text="Ссылка на ТГ:"
+                           Width="200"
+                           VerticalAlignment="Center"
+                           Classes="Headers"/>
+                <TextBox Watermark="https://t.me/studakspb"
+                         x:Name="TGTextBox"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Height="60"
+                         Width="800"
+                         Padding="35 0 35 0"
+                         Background="#E2E2FF"
+                         CornerRadius="50"
+                         FontFamily="Montserrat"
+                         FontWeight="Light"
+                         FontSize="24"/>
+            </StackPanel>
+            
+            <!--СТАТУС-->
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 20">
+                <TextBlock Text="Статус:"
+                           Width="200"
+                           VerticalAlignment="Center"
+                           Classes="Headers"/>
+                <ComboBox VerticalContentAlignment="Center"
+                          x:Name="StatusComboBox"
+                          HorizontalAlignment="Left"
+                          Height="60"
+                          Width="800"
+                          SelectedIndex="0"
+                          Padding="35 0 35 0"
+                          Background="#E2E2FF"
+                          CornerRadius="50"
+                          FontFamily="Montserrat"
+                          FontWeight="Light"
+                          FontSize="24"/>
+            </StackPanel>
+            
+            <Button Background="Transparent"
+                    x:Name="CreateBtn"
+                    Click="CreateBtn_OnClick"
+                    HorizontalAlignment="Center">
+                <Image Source="../Assets/add-user-btn.png"
+                       Height="70"/>
+            </Button>
+            <ProgressBar 
+                x:Name="Loader"
+                Foreground="#8959EF"
+                IsIndeterminate="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="100" Height="20" 
+                IsVisible="False"/>
+        </StackPanel>
+    </Grid>
+    
+</UserControl>

@@ -108,6 +108,8 @@
       <None Remove="Assets\delete-btn.png" />
       <None Remove="Assets\trash_delete_recycle_bin_remove_icon_144070 (1).png" />
       <AvaloniaResource Include="Assets\delete-btn.png" />
+      <None Remove="Assets\add-user-btn.png" />
+      <AvaloniaResource Include="Assets\add-user-btn.png" />
     </ItemGroup>
 
 

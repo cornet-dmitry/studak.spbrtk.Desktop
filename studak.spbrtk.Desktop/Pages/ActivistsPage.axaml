@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
              x:CompileBindings="False"
              x:Class="studak.spbrtk.Desktop.Pages.ActivistsPage">
     
@@ -180,15 +180,28 @@
         </StackPanel>
         
         <StackPanel Grid.Column="1" Grid.Row="1"
-                    Orientation="Vertical">
+                    Margin="0 0 0 50"
+                    Orientation="Horizontal">
             
             <TextBlock Classes="h1"
+                       VerticalAlignment="Center"
                        Text="Активисты"
-                       Margin="50"/>
+                       Margin="50 0 0 0"/>
+            
+            <Button x:Name="CreateEventBtn"
+                    Click="CreateEventBtn_OnClick"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Margin="65 0 0 0">
+                <Image Source="../Assets/add-user-btn.png"
+                       Height="70"
+                       VerticalAlignment="Center"/>
+            </Button>
         </StackPanel>
         
         <StackPanel Grid.Column="1" Grid.Row="2"
                     Orientation="Horizontal"
+                    HorizontalAlignment="Center"
                     Margin="50 0 0 0">
             <TextBlock Classes="TableHeaders"
                        Text="ФИО"
@@ -217,9 +230,10 @@
                  x:Name="ActivistsListBox"
                  Background="Transparent"
                  Width="1000"
+                 VerticalAlignment="Center"
                  SelectionChanged="ActivistsListBox_OnSelectionChanged"
-                 HorizontalAlignment="Left"
-                 Margin="40 60 0 0">
+                 HorizontalAlignment="Center"
+                 Margin="-60 60 0 0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border Margin="0 0 0 10">

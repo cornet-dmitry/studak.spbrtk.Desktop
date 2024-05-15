@@ -15,7 +15,7 @@ namespace studak.spbrtk.Desktop.Pages;
 
 public partial class CreateEventPage : UserControl
 {
-    private readonly string apiUrl = "http://localhost:5209/api";
+    private readonly string apiUrl = ApplicationState.GetValue<string>("apiUrl");
     
     private ProgressBar _loader;
 
