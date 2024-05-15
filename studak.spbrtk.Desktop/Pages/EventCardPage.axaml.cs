@@ -10,6 +10,8 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using MsBox.Avalonia;
+using MsBox.Avalonia.Enums;
 using Newtonsoft.Json;
 using studak.spbrtk.API.Models;
 using studak.spbrtk.Desktop.Models;
@@ -18,10 +20,11 @@ namespace studak.spbrtk.Desktop.Pages;
 
 public partial class EventCardPage : UserControl
 {
-    private readonly string apiUrl = "http://localhost:5209/api";
+    private readonly string apiUrl = ApplicationState.GetValue<string>("apiUrl");
 
     private readonly HttpClient _httpClient;
     
+    private ProgressBar _loader;
     private Event _event;
     
     public EventCardPage()
@@ -32,6 +35,7 @@ public partial class EventCardPage : UserControl
     public EventCardPage(Event events)
     {
         _httpClient = new HttpClient();
+        
         this._event = events;
         InitializeComponent();
         
@@ -50,6 +54,7 @@ public partial class EventCardPage : UserControl
         DocsNavBtn = this.Find<Button>("DocsNavBtn");
         
         OrderBtn = this.Find<Button>("OrderBtn");
+        _loader = this.Find<ProgressBar>("Loader");
 
         TitleTextBlock = this.Find<TextBlock>("TitleTextBlock");
         PlaceTextBlock = this.Find<TextBlock>("PlaceTextBlock");
@@ -67,6 +72,7 @@ public partial class EventCardPage : UserControl
 
     private async void LoadData()
     {
+        _loader.IsVisible = true;
         try
         {
             TitleTextBlock.Text = _event.Name;
@@ -153,6 +159,8 @@ public partial class EventCardPage : UserControl
             MessageBox messageBox = new MessageBox(e.Message);
             messageBox.Show();
         }
+        
+        _loader.IsVisible = false;
     }
 
     private async void EventOpenCloseBtn_OnClick(object? sender, RoutedEventArgs e)
@@ -189,16 +197,17 @@ public partial class EventCardPage : UserControl
     {
         try
         {
-            var eventData = new FormUrlEncodedContent(new Dictionary<string, string>
+            var box = MessageBoxManager
+                .GetMessageBoxStandard("Подтверждение", "Вы уверены, что хотите удалить данное событие?",
+                    ButtonEnum.YesNo);
+
+            var result = await box.ShowAsync();
+            
+            if (result == ButtonResult.Yes)
             {
-                { "id", _event.Id.ToString() }
-            });
-            
-            /*ЕСТЬ БАГ: ПРИ ПОПЫТКИ ОБНОВИТЬ ЗАПИСЬ С ПРИВЯЗАННЫМИ УЧАСТНИКАМИ НИЧЕГО НЕ ПРОИСХОДИТ*/
-            
-            var response = await _httpClient.PostAsync($"{this.apiUrl}/Event/EditEvent/{_event.Id}", eventData);
-            
-            Navigation.NavigateTo(new EventsPage());
+                var response = await _httpClient.DeleteAsync($"{this.apiUrl}/Event/DeleteEvent/{_event.Id}");
+                Navigation.NavigateTo(new EventsPage());
+            }
         }
         catch (Exception exception)
         {
@@ -209,11 +218,19 @@ public partial class EventCardPage : UserControl
     
     private void InvolvementListBox_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
-        var listBox = (ListBox)sender;
-        if (listBox.SelectedItems != null)
+        try
         {
-            var selectedActivists = (e.AddedItems[0] as Activists);
-            Navigation.NavigateTo(new ActivistCardPage(selectedActivists));
+            var listBox = (ListBox)sender;
+            if (listBox.SelectedItems != null)
+            {
+                var selectedActivists = (e.AddedItems[0] as Activists);
+                Navigation.NavigateTo(new ActivistCardPage(selectedActivists));
+            }
+        }
+        catch (Exception exception)
+        {
+            MessageBox messageBox = new MessageBox(exception.Message);
+            messageBox.Show();
         }
     }
 

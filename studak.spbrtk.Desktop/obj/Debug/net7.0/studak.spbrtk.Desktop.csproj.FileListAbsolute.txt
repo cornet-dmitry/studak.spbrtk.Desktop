@@ -131,3 +131,9 @@ C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\stu
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\obj\Debug\net7.0\ref\studak.spbrtk.Desktop.dll
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\AvaloniaGif.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\obj\Debug\net7.0\studak.spbrtk.Desktop.sourcelink.json
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\ColorTextBlock.Avalonia.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\DialogHost.Avalonia.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Markdown.Avalonia.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\MsBox.Avalonia.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\System.Reactive.dll

@@ -17,6 +17,8 @@ public partial class CreateEventPage : UserControl
 {
     private readonly string apiUrl = "http://localhost:5209/api";
     
+    private ProgressBar _loader;
+
     private readonly HttpClient _httpClient;
     public CreateEventPage()
     {
@@ -47,10 +49,13 @@ public partial class CreateEventPage : UserControl
         RateTextBox = this.Find<TextBox>("RateTextBox");
         DescriptionTextBox = this.Find<TextBox>("DescriptionTextBox");
         OrgComboBox = this.Find<ComboBox>("OrgComboBox");
+        
+        _loader = this.Find<ProgressBar>("Loader");
     }
 
     private async void LoadComboBox()
     {
+        _loader.IsVisible = true;
         try
         {
             var responce = await _httpClient.GetAsync(apiUrl + "/User/GetManagers");
@@ -76,10 +81,13 @@ public partial class CreateEventPage : UserControl
             MessageBox messageBox = new MessageBox(e.Message);
             messageBox.Show();
         }
+
+        _loader.IsVisible = false;
     }
     
     private async void CreateBtn_OnClick(object? sender, RoutedEventArgs e)
     {
+        _loader.IsVisible = true;
         if (CheckData())
         {
             try
@@ -109,6 +117,8 @@ public partial class CreateEventPage : UserControl
                 messageBox.Show();
             }
         }
+
+        _loader.IsVisible = false;
     }
 
     private bool CheckData()

@@ -22,7 +22,10 @@ C:\Users\Дмитрий Хорунжий\.nuget\packages\avalonia.themes.simple\
 C:\Users\Дмитрий Хорунжий\.nuget\packages\avalonia.win32\11.0.2\lib\net6.0\Avalonia.Win32.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\avalonia.x11\11.0.2\lib\net6.0\Avalonia.X11.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\avalonia_gif\1.0.0\lib\net6.0\AvaloniaGif.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\colortextblock.avalonia\11.0.0-d1\lib\net6.0\ColorTextBlock.Avalonia.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\dialoghost.avalonia\0.7.5\lib\netstandard2.0\DialogHost.Avalonia.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\harfbuzzsharp\2.8.2.3\lib\net6.0\HarfBuzzSharp.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\markdown.avalonia.tight\11.0.0-d1\lib\net6.0\Markdown.Avalonia.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microcom.runtime\0.11.0\lib\net5.0\MicroCom.Runtime.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.codeanalysis.csharp\3.8.0\lib\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.codeanalysis.csharp.scripting\3.8.0\lib\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Scripting.dll
@@ -34,6 +37,7 @@ C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.r
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\Microsoft.Win32.Primitives.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\Microsoft.Win32.Registry.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.win32.systemevents\6.0.0\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\messagebox.avalonia\3.0.0\lib\netstandard2.0\MsBox.Avalonia.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\mscorlib.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\netstandard.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\newtonsoft.json\13.0.3\lib\net6.0\Newtonsoft.Json.dll
@@ -120,6 +124,7 @@ C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.r
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.Numerics.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.Numerics.Vectors.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.ObjectModel.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\system.reactive\6.0.0\lib\net6.0\System.Reactive.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.Reflection.DispatchProxy.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.Reflection.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.Reflection.Emit.dll

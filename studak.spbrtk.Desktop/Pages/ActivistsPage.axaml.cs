@@ -22,7 +22,7 @@ public partial class ActivistsPage : UserControl
     private readonly string apiUrl = "http://localhost:5209/api";
     
     private readonly HttpClient _httpClient;
-
+    private ProgressBar _loader;
     public ActivistsPage()
     {
         _httpClient = new HttpClient();
@@ -49,11 +49,12 @@ public partial class ActivistsPage : UserControl
         DocsNavBtn = this.Find<Button>("DocsNavBtn");
 
         ActivistsListBox = this.Find<ListBox>("ActivistsListBox");
-
+        _loader = this.Find<ProgressBar>("Loader");
     }
 
     private async void LoadData()
     {
+        _loader.IsVisible = true;
         try
         {
             List<Activists> activistsList = new List<Activists>();
@@ -73,7 +74,6 @@ public partial class ActivistsPage : UserControl
                     activistsList.Add(VARIABLE);
                 }
             }
-            
             
             //запрос к API
             var responseActivists = await _httpClient.GetAsync($"{this.apiUrl}/User/GetUsers");
@@ -118,6 +118,8 @@ public partial class ActivistsPage : UserControl
             MessageBox messageBox = new MessageBox(e.Message);
             messageBox.Show();
         }
+
+        _loader.IsVisible = false;
     }
 
     private void ActivistsListBox_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)

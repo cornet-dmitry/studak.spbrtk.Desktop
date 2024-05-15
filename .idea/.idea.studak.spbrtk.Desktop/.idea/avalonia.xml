@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="studak.spbrtk.Desktop/App.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
+        <entry key="studak.spbrtk.Desktop/ConfirmationDialog.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
         <entry key="studak.spbrtk.Desktop/MainWindow.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
         <entry key="studak.spbrtk.Desktop/MessageBox.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />
         <entry key="studak.spbrtk.Desktop/Pages/ActivistCardPage.axaml" value="studak.spbrtk.Desktop/studak.spbrtk.Desktop.csproj" />

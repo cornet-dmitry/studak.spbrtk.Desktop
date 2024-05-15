@@ -291,6 +291,14 @@
                 <Image Source="../Assets/create-event-btn.png"
                        Height="70"/>
             </Button>
+            <ProgressBar 
+                x:Name="Loader"
+                Foreground="#8959EF"
+                IsIndeterminate="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="100" Height="20" 
+                IsVisible="False"/>
         </StackPanel>
     </Grid>
 </UserControl>

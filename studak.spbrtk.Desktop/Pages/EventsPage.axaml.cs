@@ -17,6 +17,8 @@ public partial class EventsPage : UserControl
 {
     private readonly string apiUrl = "http://localhost:5209/api";
     
+    private ProgressBar _loader;
+
     private readonly HttpClient _httpClient;
     public EventsPage()
     {
@@ -37,6 +39,8 @@ public partial class EventsPage : UserControl
 
         SearchTextBox = this.Find<TextBox>("SearchTextBox");
         NotificationButton = this.Find<Button>("NotificationButton");
+        
+        _loader = this.Find<ProgressBar>("Loader");
 
         ActivistsNavBtn = this.Find<Button>("ActivistsNavBtn");
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
@@ -51,6 +55,7 @@ public partial class EventsPage : UserControl
 
     private async void LoadData()
     {
+        _loader.IsVisible = true;
         try
         {
             //получение списка всех мероприятий
@@ -80,15 +85,25 @@ public partial class EventsPage : UserControl
             MessageBox messageBox = new MessageBox(e.Message);
             messageBox.Show();
         }
+
+        _loader.IsVisible = false;
     }
     
     private void EventsListBox_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
-        var listBox = (ListBox)sender;
-        if (listBox.SelectedItems != null)
+        try
         {
-            var selectedEvent = (e.AddedItems[0] as Event);
-            Navigation.NavigateTo(new EventCardPage(selectedEvent));
+            var listBox = (ListBox)sender;
+            if (listBox.SelectedItems != null)
+            {
+                var selectedEvent = (e.AddedItems[0] as Event);
+                Navigation.NavigateTo(new EventCardPage(selectedEvent));
+            }
+        }
+        catch (Exception exception)
+        {
+            MessageBox messageBox = new MessageBox(exception.Message);
+            messageBox.Show();
         }
     }
     

@@ -81,6 +81,19 @@
                HorizontalAlignment="Left"
                Source="../Assets/LeftBar.png"/>
         
+        <StackPanel Grid.Column="1" Grid.Row="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <ProgressBar 
+                x:Name="Loader"
+                Foreground="#8959EF"
+                IsIndeterminate="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="600" Height="20" 
+                IsVisible="False"/>
+        </StackPanel>
+        
         <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                     Orientation="Vertical"
                     VerticalAlignment="Center"

@@ -60,6 +60,15 @@
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         
+        <ProgressBar Grid.Column="1" Grid.Row="0" 
+            x:Name="Loader"
+            Foreground="#8959EF"
+            IsIndeterminate="True"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Width="500" Height="50" 
+            IsVisible="False"/>
+        
         <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                HorizontalAlignment="Left"
                Source="../Assets/LeftBar.png"/>

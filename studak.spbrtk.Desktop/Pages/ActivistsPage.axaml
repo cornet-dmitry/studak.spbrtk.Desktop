@@ -204,6 +204,15 @@
                        Width="200"/>
         </StackPanel>
         
+        <ProgressBar Grid.Column="1" Grid.Row="2" 
+                     x:Name="Loader"
+                     Foreground="#8959EF"
+                     IsIndeterminate="True"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Width="500" Height="50" 
+                     IsVisible="False"/>
+        
         <ListBox Grid.Column="1" Grid.Row="2"
                  x:Name="ActivistsListBox"
                  Background="Transparent"

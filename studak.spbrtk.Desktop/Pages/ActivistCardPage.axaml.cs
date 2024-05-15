@@ -20,6 +20,7 @@ public partial class ActivistCardPage : UserControl
     private readonly string apiUrl = "http://localhost:5209/api";
 
     private readonly HttpClient _httpClient;
+    private ProgressBar _loader;
     
     private Activists _activistsList;
     
@@ -60,10 +61,13 @@ public partial class ActivistCardPage : UserControl
         TgTextBLock = this.Find<TextBlock>("TgTextBLock");
         
         VkButton = this.Find<Button>("VkButton");
+        TgButton = this.Find<Button>("TgButton");
+        _loader = this.Find<ProgressBar>("Loader");
     }
 
     private async void LoadData()
     {
+        _loader.IsVisible = true;
         try
         {
             FIOTextBlock.Text = _activistsList.Surname + " " + _activistsList.Name + " " + _activistsList.Patronymic;
@@ -81,6 +85,8 @@ public partial class ActivistCardPage : UserControl
             MessageBox messageBox = new MessageBox(e.Message);
             messageBox.Show();
         }
+
+        _loader.IsVisible = false;
     }
 
     private void BackArrowBtn_OnClick(object? sender, RoutedEventArgs e)
@@ -101,8 +107,7 @@ public partial class ActivistCardPage : UserControl
             messageBox.Show();
         }
     }
-
-
+    
     private void TgButton_OnClick(object? sender, RoutedEventArgs e)
     {
         try

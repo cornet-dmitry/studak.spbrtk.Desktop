@@ -14,6 +14,7 @@
           "Avalonia.Fonts.Inter": "11.0.2",
           "Avalonia.Themes.Fluent": "11.0.2",
           "Avalonia_Gif": "1.0.0",
+          "MessageBox.Avalonia": "3.0.0",
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
@@ -271,6 +272,29 @@
           }
         }
       },
+      "ColorTextBlock.Avalonia/11.0.0-d1": {
+        "dependencies": {
+          "Avalonia": "11.0.2"
+        },
+        "runtime": {
+          "lib/net6.0/ColorTextBlock.Avalonia.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.0.0"
+          }
+        }
+      },
+      "DialogHost.Avalonia/0.7.5": {
+        "dependencies": {
+          "Avalonia": "11.0.2",
+          "System.Reactive": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DialogHost.Avalonia.dll": {
+            "assemblyVersion": "0.7.5.0",
+            "fileVersion": "0.7.5.0"
+          }
+        }
+      },
       "HarfBuzzSharp/2.8.2.3": {
         "dependencies": {
           "HarfBuzzSharp.NativeAssets.Win32": "2.8.2.3",
@@ -336,6 +360,31 @@
             "rid": "win-x86",
             "assetType": "native",
             "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Markdown.Avalonia.Tight/11.0.0-d1": {
+        "dependencies": {
+          "Avalonia": "11.0.2",
+          "ColorTextBlock.Avalonia": "11.0.0-d1"
+        },
+        "runtime": {
+          "lib/net6.0/Markdown.Avalonia.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.0.0"
+          }
+        }
+      },
+      "MessageBox.Avalonia/3.0.0": {
+        "dependencies": {
+          "Avalonia": "11.0.2",
+          "DialogHost.Avalonia": "0.7.5",
+          "Markdown.Avalonia.Tight": "11.0.0-d1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MsBox.Avalonia.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -803,6 +852,14 @@
           "System.Threading": "4.3.0"
         }
       },
+      "System.Reactive/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.Reactive.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.1"
+          }
+        }
+      },
       "System.Reflection/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.2",
@@ -1063,6 +1120,20 @@
       "path": "avalonia_gif/1.0.0",
       "hashPath": "avalonia_gif.1.0.0.nupkg.sha512"
     },
+    "ColorTextBlock.Avalonia/11.0.0-d1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sQAZgCwCS7vT5qGlxivrx6WAb1xkP47p4gAVmv5GQapfW8YXuk9a/t6QLmjJqFTJAAdk8M1EAUde0Ox5HPxjHA==",
+      "path": "colortextblock.avalonia/11.0.0-d1",
+      "hashPath": "colortextblock.avalonia.11.0.0-d1.nupkg.sha512"
+    },
+    "DialogHost.Avalonia/0.7.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jpXMSP2dy/K5UY6lclNjVgeqkitT+Vh8Aj4cLD64TShnDoBxfKOqHd8TMaFCkU5fa7hfhysdxZLZN2IrSwUZcw==",
+      "path": "dialoghost.avalonia/0.7.5",
+      "hashPath": "dialoghost.avalonia.0.7.5.nupkg.sha512"
+    },
     "HarfBuzzSharp/2.8.2.3": {
       "type": "package",
       "serviceable": true,
@@ -1097,6 +1168,20 @@
       "sha512": "sha512-Wo6QpE4+a+PFVdfIBoLkLr4wq2uC0m9TZC8FAfy4ZnLsUc10WL0Egk9EBHHhDCeokNOXDse5YtvuTYtS/rbHfg==",
       "path": "harfbuzzsharp.nativeassets.win32/2.8.2.3",
       "hashPath": "harfbuzzsharp.nativeassets.win32.2.8.2.3.nupkg.sha512"
+    },
+    "Markdown.Avalonia.Tight/11.0.0-d1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fwl4wrvTdLFLUfkFezRY6SSfPmXIJcRyYChMDiMKFEGo1rKdPMnmcJbK+BWYXxZS+g66E6SFl/ca4kakhTk1HQ==",
+      "path": "markdown.avalonia.tight/11.0.0-d1",
+      "hashPath": "markdown.avalonia.tight.11.0.0-d1.nupkg.sha512"
+    },
+    "MessageBox.Avalonia/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xGIiABBLFo4eq6MCR53AGUD/RLWCnOJbonToH2EsE1O30b2Utlddo8mq82Vu8TB2CQmvAklZGsDtzPbONA43cQ==",
+      "path": "messagebox.avalonia/3.0.0",
+      "hashPath": "messagebox.avalonia.3.0.0.nupkg.sha512"
     },
     "MicroCom.Runtime/0.11.0": {
       "type": "package",
@@ -1307,6 +1392,13 @@
       "sha512": "sha512-bdX+80eKv9bN6K4N+d77OankKHGn6CH711a6fcOpMQu2Fckp/Ft4L/kW9WznHpyR0NRAvJutzOMHNNlBGvxQzQ==",
       "path": "system.objectmodel/4.3.0",
       "hashPath": "system.objectmodel.4.3.0.nupkg.sha512"
+    },
+    "System.Reactive/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-31kfaW4ZupZzPsI5PVe77VhnvFF55qgma7KZr/E0iFTs6fmdhhG8j0mgEx620iLTey1EynOkEfnyTjtNEpJzGw==",
+      "path": "system.reactive/6.0.0",
+      "hashPath": "system.reactive.6.0.0.nupkg.sha512"
     },
     "System.Reflection/4.3.0": {
       "type": "package",
