@@ -13,7 +13,7 @@ public partial class MessageBox : Window
         InitializeComponent();
     }
     
-    public MessageBox(string message)
+    public MessageBox(string message = "Ошибка!")
     {
         _message = message;
         InitializeComponent();

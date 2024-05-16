@@ -116,4 +116,12 @@
     <ItemGroup>
       <AvaloniaResource Include="Assets\RectangleSearch.png" />
     </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Update="Pages\SelectedActivistsPage.axaml.cs">
+        <DependentUpon>SelectedActivistsPage.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

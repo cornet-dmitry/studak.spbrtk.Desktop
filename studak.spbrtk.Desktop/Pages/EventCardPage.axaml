@@ -153,7 +153,9 @@
             </StackPanel>
         </StackPanel>
         
-        <StackPanel Grid.Column="1" Grid.Row="1"
+        
+            
+        <StackPanel Grid.Column="1" Grid.Row="0"
                     Margin="30 0 0 0"
                     Orientation="Horizontal">
             <Button Background="Transparent"
@@ -180,7 +182,8 @@
                     VerticalAlignment="Center"/>
         </StackPanel>
         
-        <StackPanel Grid.Column="1" Grid.Row="2"
+        <ScrollViewer Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+        <StackPanel Grid.Column="1" Grid.Row="1"
                     Orientation="Vertical"
                     Margin="110 20 0 0">
             <StackPanel Orientation="Horizontal"
@@ -266,11 +269,23 @@
                            VerticalAlignment="Center"
                            Classes="h1"/>
                 <Button Background="#F4F4FC"
-                        x:Name="OrderBtn"
+                        x:Name="AddUserBtn"
+                        Click="AddUserBtn_OnClick"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Right"
                         Padding="0 0 0 15"
                         Margin="180 0 0 0">
+                    <Image Source="../Assets/add-user-btn.png"
+                           x:Name="AddUserImage"
+                           Height="58"/>
+                </Button>
+                <Button Background="#F4F4FC"
+                        x:Name="OrderBtn"
+                        Click="OrderBtn_OnClick"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"
+                        Padding="0 0 0 15"
+                        Margin="20 0 0 0">
                     <Image Source="../Assets/create-order-available-btn.png"
                            x:Name="OrderCreateImage"
                            Height="58"/>
@@ -291,7 +306,7 @@
             
             <ListBox x:Name="InvolvementListBox"
                      SelectionChanged="InvolvementListBox_OnSelectionChanged"
-                     Margin="-10 40 270 0"
+                     Margin="-10 40 270 40"
                      Background="Transparent">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -321,5 +336,6 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

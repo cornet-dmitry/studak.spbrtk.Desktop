@@ -54,6 +54,7 @@ public partial class EventCardPage : UserControl
         DocsNavBtn = this.Find<Button>("DocsNavBtn");
         
         OrderBtn = this.Find<Button>("OrderBtn");
+        AddUserBtn = this.Find<Button>("AddUserBtn");
         _loader = this.Find<ProgressBar>("Loader");
 
         TitleTextBlock = this.Find<TextBlock>("TitleTextBlock");
@@ -86,21 +87,17 @@ public partial class EventCardPage : UserControl
             {
                 EventStatusTextBlock.Text = "ИДЁТ НАБОР УЧАСТНИКОВ";
                 EventStatusTextBlock.Foreground = new SolidColorBrush(Color.Parse("#00AA07"));
-
-                Uri uri = new Uri("avares://studak.spbrtk.Desktop/Assets/close-event-btn.png", UriKind.RelativeOrAbsolute);
-                EventOpenCloseImage.Source = new Bitmap(AssetLoader.Open(uri));
                 
                 OrderBtn.IsVisible = false;
+                AddUserBtn.IsVisible = true;
             }
             else
             {
                 EventStatusTextBlock.Text = "НАБОР ЗАКРЫТ";
                 EventStatusTextBlock.Foreground = new SolidColorBrush(Color.Parse("#AA0000"));
                 
-                Uri uri = new Uri("avares://studak.spbrtk.Desktop/Assets/open-event-btn.png", UriKind.RelativeOrAbsolute);
-                EventOpenCloseImage.Source = new Bitmap(AssetLoader.Open(uri));
-                
                 OrderBtn.IsVisible = true;
+                AddUserBtn.IsVisible = false;
             }
             
             //Блок загрузки таблицы участников
@@ -232,6 +229,16 @@ public partial class EventCardPage : UserControl
             MessageBox messageBox = new MessageBox(exception.Message);
             messageBox.Show();
         }
+    }
+    
+    private void AddUserBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigation.NavigateTo(new SelectedActivistsPage(_event));
+    }
+    
+    private void OrderBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
     }
 
     private void ActivistsNavBtn_OnClick(object? sender, RoutedEventArgs e)
