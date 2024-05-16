@@ -11,7 +11,7 @@ public partial class MainWindow : Window
         InitializeComponent();
         MainContent = this.FindControl<ContentControl>("MainContent");
         Navigation.Initialize(MainContent);
-        MainContent.Content = new EventsPage();
+        MainContent.Content = new WelcomePage();
         
         ApplicationState.SetValue("apiUrl", "http://localhost:5209/api");
     }

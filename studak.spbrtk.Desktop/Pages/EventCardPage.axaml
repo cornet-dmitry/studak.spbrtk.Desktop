@@ -281,7 +281,6 @@
                 </Button>
                 <Button Background="#F4F4FC"
                         x:Name="OrderBtn"
-                        Click="OrderBtn_OnClick"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Right"
                         Padding="0 0 0 15"

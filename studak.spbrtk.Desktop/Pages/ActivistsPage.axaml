@@ -136,6 +136,7 @@
                    Margin="0 0 20 0"/>
         
             <TextBox x:Name="SearchTextBox"
+                     KeyUp="SearchTextBox_OnKeyUp"
                      Watermark="Поиск"
                      VerticalContentAlignment="Center"
                      HorizontalAlignment="Left"
@@ -159,11 +160,13 @@
                 <StackPanel Orientation="Vertical"
                             Margin="20 0 0 0">
                     <TextBlock Text="Иван Иванов"
+                               x:Name="UserNameTextBlock"
                                Classes="h1"
                                HorizontalAlignment="Right"
                                FontSize="24"
                                FontWeight="Bold"/>
                     <TextBlock Text="Администратор"
+                               x:Name="UserStatusTextBlock"
                                Classes="h1"
                                HorizontalAlignment="Right"
                                FontSize="20"
@@ -172,7 +175,8 @@
             </StackPanel>
             
             <StackPanel Margin="20 0 0 0"
-                        VerticalAlignment="Center">
+                        VerticalAlignment="Center"
+                        IsVisible="False">
                 <Image Source="../Assets/UserPhoto.png"
                        Height="70"/>
             </StackPanel>

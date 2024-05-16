@@ -71,10 +71,14 @@
             <TextBlock Text="Авторизируйтесь для работы с сервисом"
                        Margin="0 0 0 30"/>
             <TextBox Watermark="Логин"
+                     x:Name="Login"
                      Margin="0 0 0 10"/>
             <TextBox Watermark="Пароль"
+                     x:Name="Password"
                      Margin="0 0 0 30"/>
-            <Button Content="ВОЙТИ"/>
+            <Button Content="ВОЙТИ"
+                    x:Name="LoginBtn"
+                    Click="LoginBtn_OnClick"/>
             
         </StackPanel>
     </Grid>

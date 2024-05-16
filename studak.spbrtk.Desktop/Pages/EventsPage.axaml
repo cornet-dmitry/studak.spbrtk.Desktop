@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
              x:CompileBindings="False"
              x:Class="studak.spbrtk.Desktop.Pages.EventsPage">
     
@@ -149,6 +149,7 @@
                    Margin="0 0 20 0"/>
         
             <TextBox x:Name="SearchTextBox"
+                     KeyUp="SearchTextBox_OnKeyUp"
                      Watermark="Поиск"
                      VerticalContentAlignment="Center"
                      HorizontalAlignment="Left"
@@ -202,13 +203,15 @@
             
             <ComboBox x:Name="EventSortComboBox"
                       SelectedIndex="0"
+                      GotFocus="EventSortComboBox_OnGotFocus"
                       VerticalAlignment="Center"
                       Margin="30 0 0 0"
-                      Width="300"
+                      Width="350"
                       Background="Transparent"
                       BorderThickness="0">
                 <ComboBoxItem>сначала ближайшие</ComboBoxItem>
                 <ComboBoxItem>больше баллов</ComboBoxItem>
+                <ComboBoxItem>количество участников</ComboBoxItem>
             </ComboBox>
             
             <Button x:Name="CreateEventBtn"

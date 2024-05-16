@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
@@ -77,6 +78,39 @@ public partial class EventsPage : UserControl
 
                 VARIABLE.ActivistsNumber = involvementList.Where(x => x.Eventid == VARIABLE.Id).Select(x => x.Userid).Count();
             }
+            
+            if (!string.IsNullOrEmpty(SearchTextBox.Text))
+            {
+                string[] searchwords = SearchTextBox.Text.ToLower()
+                    .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                events = events.Where(a => searchwords.All(word =>
+                    (a.Name != null && a.Name.ToLower().Contains(word))
+                    || (a.Description != null && a.Description.ToLower().Contains(word))
+                    || (a.Place != null && a.Place.ToLower().Contains(word))))
+                    .ToList();
+            }
+
+            switch (EventSortComboBox.SelectedIndex)
+            {
+                case 0:
+                {
+                    events = events.OrderByDescending(x => x.StartDate)
+                        .OrderByDescending(x => x.StartTime).ToList();
+                    break;
+                }
+                
+                case 1:
+                {
+                    events = events.OrderByDescending(x => x.Rate).ToList();
+                    break;
+                }
+                case 2:
+                {
+                    events = events.OrderByDescending(x => x.ActivistsNumber).ToList();
+                    break;
+                }
+            }
 
             EventsListBox.ItemsSource = events;
         }
@@ -115,5 +149,15 @@ public partial class EventsPage : UserControl
     private void CreateEventBtn_OnClick(object? sender, RoutedEventArgs e)
     {
         Navigation.NavigateTo(new CreateEventPage());
+    }
+
+    private void EventSortComboBox_OnGotFocus(object? sender, GotFocusEventArgs e)
+    {
+        LoadData();
+    }
+
+    private void SearchTextBox_OnKeyUp(object? sender, KeyEventArgs e)
+    {
+        LoadData();
     }
 }

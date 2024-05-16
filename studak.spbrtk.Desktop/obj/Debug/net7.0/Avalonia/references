@@ -32,6 +32,10 @@ C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.codeanalysis.
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.codeanalysis.common\3.8.0\lib\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.codeanalysis.scripting.common\3.8.0\lib\netcoreapp3.1\Microsoft.CodeAnalysis.Scripting.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\Microsoft.CSharp.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.identitymodel.abstractions\7.5.2\lib\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.identitymodel.jsonwebtokens\7.5.2\lib\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.identitymodel.logging\7.5.2\lib\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.identitymodel.tokens\7.5.2\lib\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\Microsoft.VisualBasic.Core.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\Microsoft.VisualBasic.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\Microsoft.Win32.Primitives.dll
@@ -81,6 +85,7 @@ C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.r
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.Globalization.Calendars.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.Globalization.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.Globalization.Extensions.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\system.identitymodel.tokens.jwt\7.5.2\lib\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.IO.Compression.Brotli.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.IO.Compression.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.IO.Compression.FileSystem.dll

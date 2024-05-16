@@ -236,11 +236,6 @@ public partial class EventCardPage : UserControl
         Navigation.NavigateTo(new SelectedActivistsPage(_event));
     }
     
-    private void OrderBtn_OnClick(object? sender, RoutedEventArgs e)
-    {
-        throw new NotImplementedException();
-    }
-
     private void ActivistsNavBtn_OnClick(object? sender, RoutedEventArgs e)
     {
         Navigation.NavigateTo(new ActivistsPage());

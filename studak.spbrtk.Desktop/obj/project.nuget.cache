@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GlZ2RSMrKCDJXs+N+1IstPAtgdHeteaEKC503W3h/6OrnxOz72UAq23X+cizejtd/AAhUdkV7yYsATCxRQWkUQ==",
+  "dgSpecHash": "OuU1TfjtVd1gJjwYDmaULCd0eLn8ehWCuJuUV9pRgR8DgQcAR/lDUmhCtES2eXK9Dir/OHKmPsW+P7Br/DYkyg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Дмитрий Хорунжий\\RiderProjects\\studak.spbrtk.Desktop\\studak.spbrtk.Desktop\\studak.spbrtk.Desktop.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,10 @@
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.codeanalysis.csharp.scripting\\3.8.0\\microsoft.codeanalysis.csharp.scripting.3.8.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.codeanalysis.scripting.common\\3.8.0\\microsoft.codeanalysis.scripting.common.3.8.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.5.2\\microsoft.identitymodel.abstractions.7.5.2.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.5.2\\microsoft.identitymodel.jsonwebtokens.7.5.2.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.identitymodel.logging\\7.5.2\\microsoft.identitymodel.logging.7.5.2.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.5.2\\microsoft.identitymodel.tokens.7.5.2.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
@@ -53,6 +57,7 @@
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.dynamic.runtime\\4.3.0\\system.dynamic.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.5.2\\system.identitymodel.tokens.jwt.7.5.2.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.io.pipelines\\6.0.0\\system.io.pipelines.6.0.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",

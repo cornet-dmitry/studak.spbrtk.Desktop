@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
@@ -21,6 +23,7 @@ public partial class ActivistsPage : UserControl
 {
     private readonly string apiUrl = "http://localhost:5209/api";
     
+    private string _token;
     private readonly HttpClient _httpClient;
     private ProgressBar _loader;
     public ActivistsPage()
@@ -28,6 +31,7 @@ public partial class ActivistsPage : UserControl
         _httpClient = new HttpClient();
         InitializeComponent();
 
+        _token = ApplicationState.GetValue<string>("token");
         SearchTextBox.Background = Brushes.Transparent;
         SearchTextBox.BorderBrush = Brushes.Transparent;
         NotificationButton.Background = Brushes.Transparent;
@@ -47,6 +51,9 @@ public partial class ActivistsPage : UserControl
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
         KpiNavBtn = this.Find<Button>("KpiNavBtn");
         DocsNavBtn = this.Find<Button>("DocsNavBtn");
+        
+        UserNameTextBlock = this.Find<TextBlock>("UserNameTextBlock");
+        UserStatusTextBlock = this.Find<TextBlock>("UserStatusTextBlock");
 
         ActivistsListBox = this.Find<ListBox>("ActivistsListBox");
         _loader = this.Find<ProgressBar>("Loader");
@@ -57,6 +64,29 @@ public partial class ActivistsPage : UserControl
         _loader.IsVisible = true;
         try
         {
+            // Добавляем токен в заголовок Authorization
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token);
+        
+            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+            JwtSecurityToken jwt = tokenHandler.ReadJwtToken(_token);
+        
+            // Чтение значения конкретного клейма (claim)
+            string userId = jwt.Claims.First(c =>
+                c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
+            
+            var userData = new FormUrlEncodedContent(new Dictionary<string, string>
+            {
+                { "userId", userId}
+                
+            });
+            var userResponce = await _httpClient.PostAsync($"{this.apiUrl}/User/GetUserByID/", userData);
+            var responseValue1 = userResponce.Content.ReadAsStringAsync().Result;
+            var userResponceList = JsonConvert.DeserializeObject<List<Activists>>(responseValue1);
+            ApplicationState.SetValue("activeUser", userResponceList[0]);
+
+            UserNameTextBlock.Text = ApplicationState.GetValue<Activists>("activeUser").Surname + " " +
+                                     ApplicationState.GetValue<Activists>("activeUser").Name;
+
             List<Activists> activistsList = new List<Activists>();
 
             //запрос к API
@@ -108,7 +138,29 @@ public partial class ActivistsPage : UserControl
                 if (userStatus != null)
                 {
                     VARIABLE.Status = userStatus.StatusName;
+                    if (VARIABLE.Id == ApplicationState.GetValue<Activists>("activeUser").Id)
+                    {
+                        UserStatusTextBlock.Text = userStatus.StatusName;
+                    }
                 }
+            }
+            
+            if (!string.IsNullOrEmpty(SearchTextBox.Text))
+            {
+                string[] searchwords = SearchTextBox.Text.ToLower()
+                    .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                activistsList = activistsList.Where(a => searchwords.All(word =>
+                        (a.Name != null && a.Name.ToLower().Contains(word))
+                        || (a.Surname != null && a.Surname.ToLower().Contains(word))
+                        || (a.Patronymic != null && a.Patronymic.ToLower().Contains(word))
+                        || (a.Email != null && a.Email.ToLower().Contains(word))
+                        || (a.Phone != null && a.Phone.ToLower().Contains(word))
+                        || (a.TgLink != null && a.TgLink.ToLower().Contains(word))
+                        || (a.VkLink != null && a.VkLink.ToLower().Contains(word))
+                        || (a.Status != null && a.Status.ToLower().Contains(word))
+                        || (a.Group != null && a.Group.ToLower().Contains(word))))
+                    .ToList();
             }
             
             ActivistsListBox.ItemsSource = activistsList;
@@ -140,5 +192,10 @@ public partial class ActivistsPage : UserControl
     private void CreateEventBtn_OnClick(object? sender, RoutedEventArgs e)
     {
         Navigation.NavigateTo(new AddUserPage());
+    }
+
+    private void SearchTextBox_OnKeyUp(object? sender, KeyEventArgs e)
+    {
+        LoadData();
     }
 }

@@ -137,3 +137,8 @@ C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\stu
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Markdown.Avalonia.dll
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\MsBox.Avalonia.dll
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\System.Reactive.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

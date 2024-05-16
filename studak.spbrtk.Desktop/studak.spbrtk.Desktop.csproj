@@ -19,6 +19,7 @@
         <PackageReference Include="Avalonia_Gif" Version="1.0.0" />
         <PackageReference Include="MessageBox.Avalonia" Version="3.0.0" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.5.2" />
     </ItemGroup>
 
 
