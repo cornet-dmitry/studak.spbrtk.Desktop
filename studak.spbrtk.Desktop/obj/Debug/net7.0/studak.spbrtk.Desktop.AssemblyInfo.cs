@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("studak.spbrtk.Desktop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b66f4a5deb9ff913de01643da6e4a203d89133cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+430e50603b68ea8c0616dcd8233b833e94c73b3d")]
 [assembly: System.Reflection.AssemblyProductAttribute("studak.spbrtk.Desktop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("studak.spbrtk.Desktop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

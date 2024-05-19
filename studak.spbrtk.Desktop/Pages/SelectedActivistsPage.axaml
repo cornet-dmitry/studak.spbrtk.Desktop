@@ -118,7 +118,7 @@
         </StackPanel>
         
         
-       <StackPanel Grid.Column="1" Grid.Row="0"
+       <!--<StackPanel Grid.Column="1" Grid.Row="0"
                     Margin="60 0 0 0"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
@@ -133,7 +133,7 @@
                      VerticalContentAlignment="Center"
                      HorizontalAlignment="Left"
                      Height="55"
-                     Width="40"
+                     Width="400"
                      FontFamily="Montserrat"
                      FontWeight="Light"
                      FontSize="24">
@@ -162,41 +162,24 @@
                 </StackPanel>
             </StackPanel>
             
-            <!--<StackPanel Margin="20 0 0 0"
-                        VerticalAlignment="Center"
-                        IsVisible="False">
-                <Image Source="../Assets/UserPhoto.png"
-                       Height="70"/>
-            </StackPanel>-->
-            
-        </StackPanel>
+        </StackPanel>-->
         
         <StackPanel Grid.Column="1" Grid.Row="1"
                     Margin="0 0 0 50"
                     Orientation="Horizontal">
             
+            <Button Background="Transparent"
+                    VerticalAlignment="Center"
+                    x:Name="BackArrowBtn"
+                    Click="BackArrowBtn_OnClick">
+                <Image Source="../Assets/back-arrow-btn.png"
+                       Height="50"/>
+            </Button>
+            
             <TextBlock Classes="h1"
                        VerticalAlignment="Center"
                        Text="Выберите активистов на мероприятие"
-                       Margin="50 30 0 0"/>
-        </StackPanel>
-        
-        <StackPanel Grid.Column="1" Grid.Row="2"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Center"
-                    Margin="-500 0 0 0">
-            <TextBlock Classes="TableHeaders"
-                       Text="ФИО"
-                       Width="300"/>
-            <TextBlock Classes="TableHeaders"
-                       Text="ГРУППА"
-                       Width="200"/>
-            <TextBlock Classes="TableHeaders"
-                       Text="СТАТУС"
-                       Width="400"/>
-            <TextBlock Classes="TableHeaders"
-                       Text="РЕЙТИНГ"
-                       Width="200"/>
+                       Margin="50 0 0 0"/>
         </StackPanel>
         
         <ProgressBar Grid.Column="1" Grid.Row="2" 
@@ -208,70 +191,54 @@
                      Width="500" Height="50" 
                      IsVisible="False"/>
         
-        <TextBlock Grid.Column="1" Grid.Row="2"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Top"
-                   TextWrapping="Wrap"
-                   Width="500"
-                   Classes="Elements"
-                   Text="Вы выбрали:"/>
-        <TextBlock Grid.Column="1" Grid.Row="2"
-                   x:Name="SelectedTextBlock"
-                   Margin="0 50 0 0"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Top"
-                   TextWrapping="Wrap"
-                   Width="500"
-                   Classes="TableHeaders"
-                   Text=""/>
-        
-        <Button Grid.Column="1" Grid.Row="2"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Bottom"
-                Margin="20"
-                x:Name="AddListUsers"
-                Click="AddListUsers_OnClick"
-                Background="Transparent">
-            <Image Source="../Assets/add-user-btn.png"
-                   Height="70"/>
-        </Button>
-        
-        <ListBox Grid.Column="1" Grid.Row="2"
-                 x:Name="ActivistsListBox"
-                 SelectionChanged="ActivistsListBox_OnSelectionChanged"
-                 Background="Transparent"
-                 Width="1000"
-                 VerticalAlignment="Center"
-                 HorizontalAlignment="Left"
-                 Margin="0 60 0 0">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Border Margin="0 0 0 10">
-                        <StackPanel Orientation="Horizontal">
-                            <StackPanel Width="300">
-                                <TextBlock Text="{Binding Surname}"
-                                           Classes="Elements"/>
-                                <TextBlock Text="{Binding Name}"
-                                           Classes="Elements"/>
-                                <TextBlock Text="{Binding Patronymic}"
-                                           Classes="Elements"/>
+        <StackPanel Grid.Column="1" Grid.Row="2"
+                    Orientation="Vertical"
+                    VerticalAlignment="Top"
+                    Margin="20 0 0 0">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox Width="500"
+                          Height="50"
+                          FontFamily="Montserrat"
+                          FontSize="18"
+                          VerticalAlignment="Center"
+                          x:Name="UsersComboBox"/>
+                <Button HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Margin="20 0 0 0"
+                        x:Name="AddListUsers"
+                        Click="AddListUsers_OnClick"
+                        Background="Transparent">
+                    <Image Source="../Assets/add-user-btn.png"
+                           Height="70"/>
+                </Button>
+            </StackPanel>
+            
+            <ListBox x:Name="SelectedUsersListBox"
+                     Margin="50"
+                     Width="700"
+                     HorizontalAlignment="Left"
+                     Background="Transparent">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Classes="Elements"
+                                           Width="600"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding FullName}"/>
+                                <Button Background="Transparent"
+                                        Click="DeleteButton_OnClick"
+                                        VerticalAlignment="Center">
+                                    <Image Source="../Assets/delete-btn.png"
+                                           Height="20"/>
+                                </Button>
                             </StackPanel>
-                            
-                            <TextBlock Text="{Binding Group}"
-                                       Classes="Elements"
-                                       Width="200"/>
-                            <TextBlock Text="{Binding Status}"
-                                       TextWrapping="Wrap"
-                                       Classes="Elements"
-                                       Width="400"/>
-                            <TextBlock Text="{Binding Kpi}"
-                                       Classes="Elements"
-                                       Width="300"/>
-                        </StackPanel>
-                    </Border>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            
+        </StackPanel>
     </Grid>
     
 </UserControl>
