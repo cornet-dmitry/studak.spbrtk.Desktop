@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
              x:CompileBindings="False"
              x:Class="studak.spbrtk.Desktop.Pages.ActivistCardPage">
     
@@ -11,25 +11,25 @@
         <Style Selector="TextBlock.h1">
             <Setter Property="FontFamily" Value="Montserrat" />
             <Setter Property="FontWeight" Value="SemiBold" />
-            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontSize" Value="32"/>
         </Style>
         
         <Style Selector="TextBlock.Headers">
             <Setter Property="FontFamily" Value="Montserrat" />
             <Setter Property="FontWeight" Value="Regular" />
-            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="FontSize" Value="24"/>
         </Style>
         
         <Style Selector="TextBlock.Values">
             <Setter Property="FontFamily" Value="Montserrat" />
             <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="FontSize" Value="24"/>
         </Style>
         
         <Style Selector="TextBlock.SocialMedia">
             <Setter Property="FontFamily" Value="Montserrat" />
             <Setter Property="FontWeight" Value="Medium" />
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="18"/>
         </Style>
         
         <Style Selector="Button.Nav">
@@ -37,7 +37,7 @@
             <Setter Property="FontWeight" Value="Medium" />
             <Setter Property="Background" Value="#8959EF"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="CornerRadius" Value="50"/>
         </Style>
         
@@ -76,7 +76,7 @@
         <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                     Orientation="Vertical"
                     VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                    HorizontalAlignment="Left">
             <StackPanel Orientation="Horizontal"
                         Margin="0 0 0 30">
                 <Image Source="../Assets/activists-nav-btn.png"
@@ -115,7 +115,7 @@
         
         <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                     Orientation="Vertical"
-                    HorizontalAlignment="Center"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom">
             <Image Source="../Assets/line-bottom-nav.png"
                    Width="200"
@@ -132,7 +132,7 @@
             </StackPanel>
         </StackPanel>
         
-        <StackPanel Grid.Column="1" Grid.Row="1"
+        <StackPanel Grid.Column="1" Grid.Row="0"
                     Margin="30 0 0 0"
                     Orientation="Horizontal">
             <Button Background="Transparent"
@@ -148,7 +148,7 @@
                        Classes="h1"/>
         </StackPanel>
         
-        <StackPanel Grid.Column="1" Grid.Row="2"
+        <StackPanel Grid.Column="1" Grid.Row="1"
                     Margin="50 0 0 0"
                     Orientation="Vertical">
             <StackPanel Orientation="Horizontal">

@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+             mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
              x:CompileBindings="False"
              x:Class="studak.spbrtk.Desktop.Pages.ActivistsPage">
     
@@ -13,7 +13,7 @@
         <Style Selector="TextBlock.h1">
             <Setter Property="FontFamily" Value="Montserrat" />
             <Setter Property="FontWeight" Value="SemiBold" />
-            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontSize" Value="32"/>
         </Style>
         
         <Style Selector="TextBlock.Elements">
@@ -33,7 +33,7 @@
             <Setter Property="FontWeight" Value="Medium" />
             <Setter Property="Background" Value="#8959EF"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="CornerRadius" Value="50"/>
         </Style>
         
@@ -62,7 +62,7 @@
         <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                     Orientation="Vertical"
                     VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                    HorizontalAlignment="Left">
             <StackPanel Orientation="Horizontal"
                         Margin="0 0 0 30">
                 <Image Source="../Assets/activists-nav-btn.png"
@@ -100,7 +100,7 @@
         
         <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                     Orientation="Vertical"
-                    HorizontalAlignment="Center"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom">
             <Image Source="../Assets/line-bottom-nav.png"
                    Width="200"
@@ -118,30 +118,29 @@
         </StackPanel>
         
         
-       <StackPanel Grid.Column="1" Grid.Row="0"
+       <!--<StackPanel Grid.Column="1" Grid.Row="0"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
             <Image Source="../Assets/RectangleSearch.png"
-                   Height="113"/>
-        </StackPanel>
+                   Height="50"/>
+        </StackPanel>-->
         
         <StackPanel Grid.Column="1" Grid.Row="0"
-                    Margin="300 0 0 0"
+                    Margin="60 0 0 0"
                     VerticalAlignment="Center"
-                    HorizontalAlignment="Left"
+                    HorizontalAlignment="Center"
                     Orientation="Horizontal">
-            
-            <Image Source="../Assets/search.png"
-                   Height="30"
-                   Margin="0 0 20 0"/>
         
             <TextBox x:Name="SearchTextBox"
+                     Margin="10"
+                     Background="#E2E2FF"
                      KeyUp="SearchTextBox_OnKeyUp"
                      Watermark="Поиск"
+                     BorderThickness="0"
                      VerticalContentAlignment="Center"
                      HorizontalAlignment="Left"
                      Height="55"
-                     Width="600"
+                     Width="400"
                      FontFamily="Montserrat"
                      FontWeight="Light"
                      FontSize="24">
@@ -150,12 +149,8 @@
             
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Center"
-                        Margin="10 0 0 0">
-                
-                <Button x:Name="NotificationButton"
-                        Height="60">
-                    <Image Source="../Assets/notification.png"/>
-                </Button>
+                        HorizontalAlignment="Right"
+                        Margin="10">
                 
                 <StackPanel Orientation="Vertical"
                             Margin="20 0 0 0">
@@ -163,28 +158,28 @@
                                x:Name="UserNameTextBlock"
                                Classes="h1"
                                HorizontalAlignment="Right"
-                               FontSize="24"
+                               FontSize="20"
                                FontWeight="Bold"/>
                     <TextBlock Text="Администратор"
                                x:Name="UserStatusTextBlock"
                                Classes="h1"
                                HorizontalAlignment="Right"
-                               FontSize="20"
+                               FontSize="16"
                                FontWeight="Regular"/>
                 </StackPanel>
             </StackPanel>
             
-            <StackPanel Margin="20 0 0 0"
+            <!--<StackPanel Margin="20 0 0 0"
                         VerticalAlignment="Center"
                         IsVisible="False">
                 <Image Source="../Assets/UserPhoto.png"
                        Height="70"/>
-            </StackPanel>
+            </StackPanel>-->
             
         </StackPanel>
         
         <StackPanel Grid.Column="1" Grid.Row="1"
-                    Margin="0 0 0 50"
+                    Margin="0 20 0 20"
                     Orientation="Horizontal">
             
             <TextBlock Classes="h1"
@@ -198,7 +193,7 @@
                     Background="Transparent"
                     Margin="65 0 0 0">
                 <Image Source="../Assets/add-user-btn.png"
-                       Height="70"
+                       Height="40"
                        VerticalAlignment="Center"/>
             </Button>
         </StackPanel>

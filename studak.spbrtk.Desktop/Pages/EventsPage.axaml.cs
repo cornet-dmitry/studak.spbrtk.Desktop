@@ -26,9 +26,9 @@ public partial class EventsPage : UserControl
         _httpClient = new HttpClient();
         InitializeComponent();
 
-        SearchTextBox.Background = Brushes.Transparent;
-        SearchTextBox.BorderBrush = Brushes.Transparent;
-        NotificationButton.Background = Brushes.Transparent;
+        /*SearchTextBox.Background = Brushes.Transparent;
+        SearchTextBox.BorderBrush = Brushes.Transparent;*/
+        //NotificationButton.Background = Brushes.Transparent;
         EventsNavBtn.FontWeight = FontWeight.ExtraBold;
 
         LoadData();
@@ -39,7 +39,7 @@ public partial class EventsPage : UserControl
         AvaloniaXamlLoader.Load(this);
 
         SearchTextBox = this.Find<TextBox>("SearchTextBox");
-        NotificationButton = this.Find<Button>("NotificationButton");
+        //NotificationButton = this.Find<Button>("NotificationButton");
         
         _loader = this.Find<ProgressBar>("Loader");
 
@@ -52,6 +52,8 @@ public partial class EventsPage : UserControl
         EventSortComboBox = this.Find<ComboBox>("EventSortComboBox");
         EventsListBox = this.Find<ListBox>("EventsListBox");
 
+        UserStatusTextBlock = this.Find<TextBlock>("UserStatusTextBlock");
+        UserNameTextBlock = this.Find<TextBlock>("UserNameTextBlock");
     }
 
     private async void LoadData()
@@ -59,6 +61,9 @@ public partial class EventsPage : UserControl
         _loader.IsVisible = true;
         try
         {
+            UserNameTextBlock.Text = ApplicationState.GetValue<string>("UserNameTextBlock");
+            UserStatusTextBlock.Text = ApplicationState.GetValue<string>("UserStatusTextBlock");
+            
             //получение списка всех мероприятий
             var response = await _httpClient.GetAsync(this.apiUrl + "/Event/GetEvents");
             var content = await response.Content.ReadAsStringAsync();

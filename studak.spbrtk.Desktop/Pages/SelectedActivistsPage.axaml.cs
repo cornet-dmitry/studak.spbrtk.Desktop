@@ -41,9 +41,9 @@ public partial class SelectedActivistsPage : UserControl
         _httpClient = new HttpClient();
         InitializeComponent();
 
-        SearchTextBox.Background = Brushes.Transparent;
+        /*SearchTextBox.Background = Brushes.Transparent;
         SearchTextBox.BorderBrush = Brushes.Transparent;
-        NotificationButton.Background = Brushes.Transparent;
+        NotificationButton.Background = Brushes.Transparent;*/
         ActivistsNavBtn.FontWeight = FontWeight.ExtraBold;
 
         _selectedActivistsList = new List<Activists>();
@@ -56,7 +56,7 @@ public partial class SelectedActivistsPage : UserControl
         AvaloniaXamlLoader.Load(this);
 
         SearchTextBox = this.Find<TextBox>("SearchTextBox");
-        NotificationButton = this.Find<Button>("NotificationButton");
+        //NotificationButton = this.Find<Button>("NotificationButton");
 
         ActivistsNavBtn = this.Find<Button>("ActivistsNavBtn");
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
@@ -222,5 +222,9 @@ public partial class SelectedActivistsPage : UserControl
     {
         Navigation.NavigateTo(new AddUserPage());
     }
-    
+
+    private void SearchTextBox_OnKeyUp(object? sender, KeyEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
 }

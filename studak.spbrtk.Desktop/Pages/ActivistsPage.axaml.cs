@@ -32,9 +32,9 @@ public partial class ActivistsPage : UserControl
         InitializeComponent();
 
         _token = ApplicationState.GetValue<string>("token");
-        SearchTextBox.Background = Brushes.Transparent;
-        SearchTextBox.BorderBrush = Brushes.Transparent;
-        NotificationButton.Background = Brushes.Transparent;
+        /*SearchTextBox.Background = Brushes.Transparent;
+        SearchTextBox.BorderBrush = Brushes.Transparent;*/
+        //NotificationButton.Background = Brushes.Transparent;
         ActivistsNavBtn.FontWeight = FontWeight.ExtraBold;
 
         LoadData();
@@ -45,7 +45,7 @@ public partial class ActivistsPage : UserControl
         AvaloniaXamlLoader.Load(this);
 
         SearchTextBox = this.Find<TextBox>("SearchTextBox");
-        NotificationButton = this.Find<Button>("NotificationButton");
+        //NotificationButton = this.Find<Button>("NotificationButton");
 
         ActivistsNavBtn = this.Find<Button>("ActivistsNavBtn");
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
@@ -64,31 +64,12 @@ public partial class ActivistsPage : UserControl
         _loader.IsVisible = true;
         try
         {
-            // Добавляем токен в заголовок Authorization
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token);
-        
-            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
-            JwtSecurityToken jwt = tokenHandler.ReadJwtToken(_token);
-        
-            // Чтение значения конкретного клейма (claim)
-            string userId = jwt.Claims.First(c =>
-                c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
-            
-            var userData = new FormUrlEncodedContent(new Dictionary<string, string>
-            {
-                { "userId", userId}
-                
-            });
-            var userResponce = await _httpClient.PostAsync($"{this.apiUrl}/User/GetUserByID/", userData);
-            var responseValue1 = userResponce.Content.ReadAsStringAsync().Result;
-            var userResponceList = JsonConvert.DeserializeObject<List<Activists>>(responseValue1);
-            ApplicationState.SetValue("activeUser", userResponceList[0]);
-
-            UserNameTextBlock.Text = ApplicationState.GetValue<Activists>("activeUser").Surname + " " +
-                                     ApplicationState.GetValue<Activists>("activeUser").Name;
-
             List<Activists> activistsList = new List<Activists>();
-
+            
+            
+            UserNameTextBlock.Text = ApplicationState.GetValue<string>("UserNameTextBlock");
+            UserStatusTextBlock.Text = ApplicationState.GetValue<string>("UserStatusTextBlock");
+            
             //запрос к API
             
             var responseManagers = await _httpClient.GetAsync($"{this.apiUrl}/User/GetManagers");
@@ -138,10 +119,6 @@ public partial class ActivistsPage : UserControl
                 if (userStatus != null)
                 {
                     VARIABLE.Status = userStatus.StatusName;
-                    if (VARIABLE.Id == ApplicationState.GetValue<Activists>("activeUser").Id)
-                    {
-                        UserStatusTextBlock.Text = userStatus.StatusName;
-                    }
                 }
             }
             
@@ -162,6 +139,9 @@ public partial class ActivistsPage : UserControl
                         || (a.Group != null && a.Group.ToLower().Contains(word))))
                     .ToList();
             }
+            
+            UserNameTextBlock.Text = ApplicationState.GetValue<string>("UserNameTextBlock");
+            UserStatusTextBlock.Text = ApplicationState.GetValue<string>("UserStatusTextBlock");
             
             ActivistsListBox.ItemsSource = activistsList;
         }
