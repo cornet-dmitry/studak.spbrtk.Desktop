@@ -175,13 +175,6 @@
                 </StackPanel>
             </StackPanel>
             
-            <!--<StackPanel Margin="20 0 0 0"
-                        VerticalAlignment="Center"
-                        IsVisible="False">
-                <Image Source="../Assets/UserPhoto.png"
-                       Height="70"/>
-            </StackPanel>-->
-            
         </StackPanel>
         
         <StackPanel Grid.Column="1" Grid.Row="1"

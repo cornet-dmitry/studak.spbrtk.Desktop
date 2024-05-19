@@ -117,14 +117,6 @@
             </StackPanel>
         </StackPanel>
         
-        
-       <!--<StackPanel Grid.Column="1" Grid.Row="0"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
-            <Image Source="../Assets/RectangleSearch.png"
-                   Height="50"/>
-        </StackPanel>-->
-        
         <StackPanel Grid.Column="1" Grid.Row="0"
                     Margin="60 0 0 0"
                     VerticalAlignment="Center"
@@ -168,13 +160,6 @@
                                FontWeight="Regular"/>
                 </StackPanel>
             </StackPanel>
-            
-            <!--<StackPanel Margin="20 0 0 0"
-                        VerticalAlignment="Center"
-                        IsVisible="False">
-                <Image Source="../Assets/UserPhoto.png"
-                       Height="70"/>
-            </StackPanel>-->
             
         </StackPanel>
         

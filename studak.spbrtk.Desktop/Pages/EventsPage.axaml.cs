@@ -25,10 +25,6 @@ public partial class EventsPage : UserControl
     {
         _httpClient = new HttpClient();
         InitializeComponent();
-
-        /*SearchTextBox.Background = Brushes.Transparent;
-        SearchTextBox.BorderBrush = Brushes.Transparent;*/
-        //NotificationButton.Background = Brushes.Transparent;
         EventsNavBtn.FontWeight = FontWeight.ExtraBold;
 
         LoadData();
@@ -39,7 +35,6 @@ public partial class EventsPage : UserControl
         AvaloniaXamlLoader.Load(this);
 
         SearchTextBox = this.Find<TextBox>("SearchTextBox");
-        //NotificationButton = this.Find<Button>("NotificationButton");
         
         _loader = this.Find<ProgressBar>("Loader");
 

@@ -32,9 +32,6 @@ public partial class ActivistsPage : UserControl
         InitializeComponent();
 
         _token = ApplicationState.GetValue<string>("token");
-        /*SearchTextBox.Background = Brushes.Transparent;
-        SearchTextBox.BorderBrush = Brushes.Transparent;*/
-        //NotificationButton.Background = Brushes.Transparent;
         ActivistsNavBtn.FontWeight = FontWeight.ExtraBold;
 
         LoadData();
@@ -45,7 +42,6 @@ public partial class ActivistsPage : UserControl
         AvaloniaXamlLoader.Load(this);
 
         SearchTextBox = this.Find<TextBox>("SearchTextBox");
-        //NotificationButton = this.Find<Button>("NotificationButton");
 
         ActivistsNavBtn = this.Find<Button>("ActivistsNavBtn");
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
