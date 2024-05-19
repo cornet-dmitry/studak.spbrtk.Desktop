@@ -77,6 +77,11 @@ public partial class EventsPage : UserControl
                                         + " " + VARIABLE.StartTime.ToString().Split(new []{' '})[1];
 
                 VARIABLE.ActivistsNumber = involvementList.Where(x => x.Eventid == VARIABLE.Id).Select(x => x.Userid).Count();
+
+                if (VARIABLE.Isactice == false)
+                {
+                    VARIABLE.Name = "CLOSE | " + VARIABLE.Name;
+                }
             }
             
             if (!string.IsNullOrEmpty(SearchTextBox.Text))
@@ -111,7 +116,7 @@ public partial class EventsPage : UserControl
                     break;
                 }
             }
-
+            
             EventsListBox.ItemsSource = events;
         }
         catch (Exception e)

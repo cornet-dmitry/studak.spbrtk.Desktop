@@ -50,7 +50,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         
-        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
                HorizontalAlignment="Left"
                Source="../Assets/LeftBar.png"/>
         
@@ -75,6 +75,7 @@
                      Margin="0 0 0 10"/>
             <TextBox Watermark="Пароль"
                      x:Name="Password"
+                     PasswordChar="*"
                      Margin="0 0 0 30"/>
             <Button Content="ВОЙТИ"
                     x:Name="LoginBtn"

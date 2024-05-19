@@ -252,11 +252,11 @@
                            TextWrapping="Wrap"
                            Classes="Values"/>
                 <Button Background="Transparent"
-                        x:Name="EventOpenCloseBtn"
-                        Click="EventOpenCloseBtn_OnClick"
+                        x:Name="EndEventBtn"
+                        Click="EndEventBtn_OnClick"
                         Margin="30 0 0 0">
-                    <Image Source="../Assets/close-event-btn.png"
-                           x:Name="EventOpenCloseImage"
+                    <Image Source="../Assets/end-event-btn.png"
+                           x:Name="EndEventImage"
                            Height="41"
                            VerticalAlignment="Center"/>
                 </Button>

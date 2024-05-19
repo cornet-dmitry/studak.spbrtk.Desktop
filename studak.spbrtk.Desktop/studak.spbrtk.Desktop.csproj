@@ -111,6 +111,8 @@
       <AvaloniaResource Include="Assets\delete-btn.png" />
       <None Remove="Assets\add-user-btn.png" />
       <AvaloniaResource Include="Assets\add-user-btn.png" />
+      <None Remove="Assets\end-event-btn.png" />
+      <AvaloniaResource Include="Assets\end-event-btn.png" />
     </ItemGroup>
 
 

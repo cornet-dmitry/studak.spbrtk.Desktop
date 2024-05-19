@@ -67,8 +67,8 @@ public partial class EventCardPage : UserControl
         ActivistsCountTextBlock = this.Find<TextBlock>("ActivistsCountTextBlock");
 
         InvolvementListBox = this.Find<ListBox>("InvolvementListBox");
-        EventOpenCloseImage = this.Find<Image>("EventOpenCloseImage");
         OrderCreateImage = this.Find<Image>("OrderCreateImage");
+        EndEventBtn = this.Find<Button>("EndEventBtn");
     }
 
     private async void LoadData()
@@ -85,18 +85,19 @@ public partial class EventCardPage : UserControl
 
             if (_event.Isactice is true)
             {
-                EventStatusTextBlock.Text = "ИДЁТ НАБОР УЧАСТНИКОВ";
+                EventStatusTextBlock.Text = "МЕРОПРИЯТИЕ ОТКРЫТО";
                 EventStatusTextBlock.Foreground = new SolidColorBrush(Color.Parse("#00AA07"));
                 
-                OrderBtn.IsVisible = false;
+                EndEventBtn.IsVisible = true;
                 AddUserBtn.IsVisible = true;
             }
             else
             {
-                EventStatusTextBlock.Text = "НАБОР ЗАКРЫТ";
+                EventStatusTextBlock.Text = "МЕРОПРИЯТИЕ ЗАВЕРШЕНО";
                 EventStatusTextBlock.Foreground = new SolidColorBrush(Color.Parse("#AA0000"));
                 
-                OrderBtn.IsVisible = true;
+                
+                EndEventBtn.IsVisible = false;
                 AddUserBtn.IsVisible = false;
             }
             
@@ -159,36 +160,6 @@ public partial class EventCardPage : UserControl
         
         _loader.IsVisible = false;
     }
-
-    private async void EventOpenCloseBtn_OnClick(object? sender, RoutedEventArgs e)
-    {
-        try
-        {
-            var eventData = new FormUrlEncodedContent(new Dictionary<string, string>
-            {
-                { "name", _event.Name },
-                { "description", _event.Description },
-                { "place", _event.Place },
-                { "startDate", _event.StartDate.ToString() },
-                { "endDate", _event.EndDate.ToString() },
-                { "startTime", _event.StartTime.ToString() },
-                { "endTime", _event.EndTime.ToString() },
-                { "rate", _event.Rate.ToString() },
-                { "isActive", (!_event.Isactice).ToString() },
-            });
-            
-            /*ЕСТЬ БАГ: ПРИ ПОПЫТКИ ОБНОВИТЬ ЗАПИСЬ С ПРИВЯЗАННЫМИ УЧАСТНИКАМИ НИЧЕГО НЕ ПРОИСХОДИТ*/
-            
-            var response = await _httpClient.PostAsync($"{this.apiUrl}/Event/EditEvent/{_event.Id}", eventData);
-            
-            Navigation.NavigateTo(new EventsPage());
-        }
-        catch (Exception exception)
-        {
-            MessageBox messageBox = new MessageBox(exception.Message);
-            messageBox.Show();
-        }
-    }
     
     private async void DeleteEventBtn_OnClick(object? sender, RoutedEventArgs e)
     {
@@ -222,6 +193,68 @@ public partial class EventCardPage : UserControl
             {
                 var selectedActivists = (e.AddedItems[0] as Activists);
                 Navigation.NavigateTo(new ActivistCardPage(selectedActivists));
+            }
+        }
+        catch (Exception exception)
+        {
+            MessageBox messageBox = new MessageBox(exception.Message);
+            messageBox.Show();
+        }
+    }
+    
+    private async void EndEventBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        try
+        {
+            var box = MessageBoxManager
+                .GetMessageBoxStandard("Подтверждение", "Вы уверены, что хотите закрыть данное событие?\u2028" +
+                                                        "Всем участникам будут начисленны балы рейтинга.\u2028" +
+                                                        "Отменить это действиет будет нельзя!",
+                    ButtonEnum.YesNo);
+
+            var result = await box.ShowAsync();
+            
+            if (result == ButtonResult.Yes)
+            {
+                var userData = new FormUrlEncodedContent(new Dictionary<string, string>
+                {
+                    { "id", _event.Id.ToString() }
+                });
+            
+                var response = await _httpClient.PostAsync($"{this.apiUrl}/Involvement/GetInvolvementByEventId", userData);
+                
+                var responseValue = response.Content.ReadAsStringAsync().Result;
+                var involvementList = JsonConvert.DeserializeObject<List<Involvement>>(responseValue);
+
+                foreach (var VARIABLE in involvementList)
+                {
+                    var userKpiData = new FormUrlEncodedContent(new Dictionary<string, string>
+                    {
+                        { "userId", VARIABLE.Userid.ToString() },
+                        { "changeAmount", _event.Rate.ToString() }
+                    });
+                    
+                    var kpiResponse = await _httpClient.PostAsync($"{this.apiUrl}/KPI/ChangeUserKPI", userKpiData);
+                }
+                
+                var eventData = new FormUrlEncodedContent(new Dictionary<string, string>
+                {
+                    { "name", _event.Name },
+                    { "description", _event.Description },
+                    { "place", _event.Place },
+                    { "startDate", _event.StartDate.ToString() },
+                    { "endDate", _event.EndDate.ToString() },
+                    { "startTime", _event.StartTime.ToString() },
+                    { "endTime", _event.EndTime.ToString() },
+                    { "rate", _event.Rate.ToString() },
+                    { "isActive", false.ToString() },
+                });
+            
+                /*ЕСТЬ БАГ: ПРИ ПОПЫТКИ ОБНОВИТЬ ЗАПИСЬ С ПРИВЯЗАННЫМИ УЧАСТНИКАМИ НИЧЕГО НЕ ПРОИСХОДИТ*/
+            
+                var response1 = await _httpClient.PostAsync($"{this.apiUrl}/Event/EditEvent/{_event.Id}", eventData);
+                
+                Navigation.NavigateTo(new EventsPage());
             }
         }
         catch (Exception exception)

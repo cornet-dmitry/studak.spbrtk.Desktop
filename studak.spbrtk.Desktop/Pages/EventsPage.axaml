@@ -2,11 +2,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:desktop="clr-namespace:studak.spbrtk.Desktop"
              mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
              x:CompileBindings="False"
              x:Class="studak.spbrtk.Desktop.Pages.EventsPage">
     
     <UserControl.Resources>
+        <desktop:backgroundConverter x:Key="BackgroundConverter"/>
     </UserControl.Resources>
     
     <UserControl.Styles>
@@ -228,8 +230,13 @@
                 <DataTemplate>
                     <Border BorderThickness="1"
                             BorderBrush="#E2E2FF"
-                            Background="#E2E2FF"
                             CornerRadius="40">
+                        
+                        <Border.Background>
+                            <MultiBinding Converter="{StaticResource BackgroundConverter}">
+                                <Binding Path="Isactice"/>
+                            </MultiBinding>
+                        </Border.Background>
                         
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="{Binding Name}"
