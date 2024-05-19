@@ -159,4 +159,9 @@ public partial class AddUserPage : UserControl
     {
         Navigation.NavigateTo(new EventsPage());
     }
+
+    private void KpiNavBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigation.NavigateTo(new RatePage());
+    }
 }

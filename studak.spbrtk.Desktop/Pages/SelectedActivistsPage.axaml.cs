@@ -227,4 +227,9 @@ public partial class SelectedActivistsPage : UserControl
     {
         throw new NotImplementedException();
     }
+
+    private void KpiNavBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigation.NavigateTo(new RatePage());
+    }
 }

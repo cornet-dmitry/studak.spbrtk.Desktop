@@ -174,4 +174,9 @@ public partial class ActivistsPage : UserControl
     {
         LoadData();
     }
+
+    private void KpiNavBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigation.NavigateTo(new RatePage());
+    }
 }

@@ -85,6 +85,7 @@
                        Height="45"/>
                 <Button Classes="Nav"
                         x:Name="KpiNavBtn"
+                        Click="KpiNavBtn_OnClick"
                         Content="Рейтинг"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
