@@ -41,7 +41,7 @@ public partial class EventsPage : UserControl
         ActivistsNavBtn = this.Find<Button>("ActivistsNavBtn");
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
         KpiNavBtn = this.Find<Button>("KpiNavBtn");
-        DocsNavBtn = this.Find<Button>("DocsNavBtn");
+        //DocsNavBtn = this.Find<Button>("DocsNavBtn");
         CreateEventBtn = this.Find<Button>("CreateEventBtn");
 
         EventSortComboBox = this.Find<ComboBox>("EventSortComboBox");
@@ -100,12 +100,12 @@ public partial class EventsPage : UserControl
             {
                 case 0:
                 {
-                    events = events.OrderByDescending(x => x.StartDate)
-                        .OrderByDescending(x => x.StartTime).ToList();
+                    events = events.OrderBy(x => x.StartDate)
+                        .OrderBy(x => x.StartTime).ToList();
                     break;
                 }
                 
-                case 1:
+                case 1: 
                 {
                     events = events.OrderByDescending(x => x.Rate).ToList();
                     break;
@@ -116,6 +116,8 @@ public partial class EventsPage : UserControl
                     break;
                 }
             }
+
+            events = events.OrderByDescending(x => x.Isactice).ToList();
             
             EventsListBox.ItemsSource = events;
         }

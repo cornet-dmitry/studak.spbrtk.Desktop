@@ -46,7 +46,7 @@ public partial class ActivistsPage : UserControl
         ActivistsNavBtn = this.Find<Button>("ActivistsNavBtn");
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
         KpiNavBtn = this.Find<Button>("KpiNavBtn");
-        DocsNavBtn = this.Find<Button>("DocsNavBtn");
+        //DocsNavBtn = this.Find<Button>("DocsNavBtn");
         
         UserNameTextBlock = this.Find<TextBlock>("UserNameTextBlock");
         UserStatusTextBlock = this.Find<TextBlock>("UserStatusTextBlock");
@@ -164,6 +164,11 @@ public partial class ActivistsPage : UserControl
     {
         Navigation.NavigateTo(new EventsPage());
     }
+    
+    private void KpiNavBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigation.NavigateTo(new RatePage());
+    }
 
     private void CreateEventBtn_OnClick(object? sender, RoutedEventArgs e)
     {
@@ -175,8 +180,5 @@ public partial class ActivistsPage : UserControl
         LoadData();
     }
 
-    private void KpiNavBtn_OnClick(object? sender, RoutedEventArgs e)
-    {
-        Navigation.NavigateTo(new RatePage());
-    }
+    
 }

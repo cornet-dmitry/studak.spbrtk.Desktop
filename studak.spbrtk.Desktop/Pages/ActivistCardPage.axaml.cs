@@ -48,7 +48,7 @@ public partial class ActivistCardPage : UserControl
         ActivistsNavBtn = this.Find<Button>("ActivistsNavBtn");
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
         KpiNavBtn = this.Find<Button>("KpiNavBtn");
-        DocsNavBtn = this.Find<Button>("DocsNavBtn");
+        //DocsNavBtn = this.Find<Button>("DocsNavBtn");
         BackArrowBtn = this.Find<Button>("BackArrowBtn");
 
         KPITextBlock = this.Find<TextBlock>("KPITextBlock");

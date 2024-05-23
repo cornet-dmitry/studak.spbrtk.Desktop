@@ -51,9 +51,9 @@ public partial class EventCardPage : UserControl
         ActivistsNavBtn = this.Find<Button>("ActivistsNavBtn");
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
         KpiNavBtn = this.Find<Button>("KpiNavBtn");
-        DocsNavBtn = this.Find<Button>("DocsNavBtn");
+        //DocsNavBtn = this.Find<Button>("DocsNavBtn");
         
-        OrderBtn = this.Find<Button>("OrderBtn");
+        //OrderBtn = this.Find<Button>("OrderBtn");
         AddUserBtn = this.Find<Button>("AddUserBtn");
         _loader = this.Find<ProgressBar>("Loader");
 
@@ -67,7 +67,7 @@ public partial class EventCardPage : UserControl
         ActivistsCountTextBlock = this.Find<TextBlock>("ActivistsCountTextBlock");
 
         InvolvementListBox = this.Find<ListBox>("InvolvementListBox");
-        OrderCreateImage = this.Find<Image>("OrderCreateImage");
+        //OrderCreateImage = this.Find<Image>("OrderCreateImage");
         EndEventBtn = this.Find<Button>("EndEventBtn");
     }
 

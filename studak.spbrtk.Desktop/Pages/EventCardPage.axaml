@@ -125,17 +125,17 @@
                         Click="KpiNavBtn_OnClick"
                         Content="Рейтинг"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal"
+            <!--<StackPanel Orientation="Horizontal"
                         Margin="0 0 0 30">
                 <Image Source="../Assets/docs-nav-btn.png"
                        Height="45"/>
                 <Button Classes="Nav"
                         x:Name="DocsNavBtn"
                         Content="Документы"/>
-            </StackPanel>
+            </StackPanel>-->
         </StackPanel>
         
-        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+        <!--<StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                     Orientation="Vertical"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom">
@@ -152,7 +152,7 @@
                         x:Name="SettingsNavBtn"
                         Content="Настройки"/>
             </StackPanel>
-        </StackPanel>
+        </StackPanel>-->
         
         
             
@@ -279,7 +279,7 @@
                            x:Name="AddUserImage"
                            Height="58"/>
                 </Button>
-                <Button Background="#F4F4FC"
+                <!--<Button Background="#F4F4FC"
                         x:Name="OrderBtn"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Right"
@@ -288,7 +288,7 @@
                     <Image Source="../Assets/create-order-available-btn.png"
                            x:Name="OrderCreateImage"
                            Height="58"/>
-                </Button>
+                </Button>-->
             </StackPanel>
             
             <StackPanel Orientation="Horizontal">
