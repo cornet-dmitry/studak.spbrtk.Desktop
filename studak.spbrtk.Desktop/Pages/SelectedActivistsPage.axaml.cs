@@ -63,7 +63,7 @@ public partial class SelectedActivistsPage : UserControl
         ActivistsNavBtn = this.Find<Button>("ActivistsNavBtn");
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
         KpiNavBtn = this.Find<Button>("KpiNavBtn");
-        //DocsNavBtn = this.Find<Button>("DocsNavBtn");
+        DocsNavBtn = this.Find<Button>("DocsNavBtn");
         
         AddListUsers = this.Find<Button>("AddListUsers");
         UsersComboBox = this.Find<ComboBox>("UsersComboBox");

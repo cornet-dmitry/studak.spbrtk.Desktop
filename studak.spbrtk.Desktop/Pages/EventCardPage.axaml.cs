@@ -53,7 +53,7 @@ public partial class EventCardPage : UserControl
         KpiNavBtn = this.Find<Button>("KpiNavBtn");
         //DocsNavBtn = this.Find<Button>("DocsNavBtn");
         
-        //OrderBtn = this.Find<Button>("OrderBtn");
+        OrderBtn = this.Find<Button>("OrderBtn");
         AddUserBtn = this.Find<Button>("AddUserBtn");
         _loader = this.Find<ProgressBar>("Loader");
 
@@ -132,6 +132,8 @@ public partial class EventCardPage : UserControl
                     
                     activistsList.Add(usertList[0]);
                 }
+                
+                ApplicationState.SetValue("tempActivistsList", activistsList);
                 
                 //получение списка всех статусов
                 var statusResponse = await _httpClient.GetAsync(this.apiUrl + "/UserStatus/GetUserStatus");
@@ -262,6 +264,12 @@ public partial class EventCardPage : UserControl
             MessageBox messageBox = new MessageBox(exception.Message);
             messageBox.Show();
         }
+    }
+    
+    private async void OrderBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+            WordHelper wordHelper = new WordHelper();
+            wordHelper.GenerateWordFile(_event);
     }
     
     private void AddUserBtn_OnClick(object? sender, RoutedEventArgs e)

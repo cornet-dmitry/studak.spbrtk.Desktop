@@ -36,6 +36,7 @@ C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.identitymodel
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.identitymodel.jsonwebtokens\7.5.2\lib\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.identitymodel.logging\7.5.2\lib\net6.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.identitymodel.tokens\7.5.2\lib\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.office.interop.word\12.0.0\lib\net11\Microsoft.Office.Interop.Word.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\Microsoft.VisualBasic.Core.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\Microsoft.VisualBasic.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\Microsoft.Win32.Primitives.dll
@@ -98,6 +99,7 @@ C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.r
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.IO.FileSystem.Watcher.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.IO.IsolatedStorage.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.IO.MemoryMappedFiles.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\system.io.packaging\4.5.0\ref\netstandard2.0\System.IO.Packaging.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\system.io.pipelines\6.0.0\lib\net6.0\System.IO.Pipelines.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.IO.Pipes.AccessControl.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.IO.Pipes.dll
@@ -207,3 +209,5 @@ C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.r
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\System.Xml.XPath.XDocument.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\tmds.dbus.protocol\0.15.0\lib\net6.0\Tmds.DBus.Protocol.dll
 C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.netcore.app.ref\7.0.17\ref\net7.0\WindowsBase.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\docx\3.0.0\lib\net5.0\Xceed.Document.NET5.dll
+C:\Users\Дмитрий Хорунжий\.nuget\packages\docx\3.0.0\lib\net5.0\Xceed.Words.NET5.dll

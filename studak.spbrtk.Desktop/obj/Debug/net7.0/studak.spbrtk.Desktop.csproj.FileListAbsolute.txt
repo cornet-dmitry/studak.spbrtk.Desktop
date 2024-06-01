@@ -142,3 +142,8 @@ C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\stu
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Documents\Templates\shablon-prikaza-rtk.docx
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Microsoft.Office.Interop.Word.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Xceed.Document.NET5.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\Xceed.Words.NET5.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.Desktop\studak.spbrtk.Desktop\bin\Debug\net7.0\System.IO.Packaging.dll

@@ -46,7 +46,7 @@ public partial class ActivistsPage : UserControl
         ActivistsNavBtn = this.Find<Button>("ActivistsNavBtn");
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
         KpiNavBtn = this.Find<Button>("KpiNavBtn");
-        //DocsNavBtn = this.Find<Button>("DocsNavBtn");
+        DocsNavBtn = this.Find<Button>("DocsNavBtn");
         
         UserNameTextBlock = this.Find<TextBlock>("UserNameTextBlock");
         UserStatusTextBlock = this.Find<TextBlock>("UserStatusTextBlock");

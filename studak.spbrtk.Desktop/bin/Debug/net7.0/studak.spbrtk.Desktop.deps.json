@@ -14,7 +14,9 @@
           "Avalonia.Fonts.Inter": "11.0.2",
           "Avalonia.Themes.Fluent": "11.0.2",
           "Avalonia_Gif": "1.0.0",
+          "DocX": "3.0.0",
           "MessageBox.Avalonia": "3.0.0",
+          "Microsoft.Office.Interop.Word": "12.0.0",
           "Newtonsoft.Json": "13.0.3",
           "System.IdentityModel.Tokens.Jwt": "7.5.2"
         },
@@ -293,6 +295,22 @@
           "lib/netstandard2.0/DialogHost.Avalonia.dll": {
             "assemblyVersion": "0.7.5.0",
             "fileVersion": "0.7.5.0"
+          }
+        }
+      },
+      "DocX/3.0.0": {
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0",
+          "System.IO.Packaging": "4.5.0"
+        },
+        "runtime": {
+          "lib/net5.0/Xceed.Document.NET5.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net5.0/Xceed.Words.NET5.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
           }
         }
       },
@@ -678,6 +696,14 @@
       },
       "Microsoft.NETCore.Platforms/2.1.2": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.Office.Interop.Word/12.0.0": {
+        "runtime": {
+          "lib/net11/Microsoft.Office.Interop.Word.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.4518.1014"
+          }
+        }
+      },
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "runtime": {
           "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
@@ -855,6 +881,14 @@
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.IO.Packaging/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.IO.Packaging.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.26515.6"
+          }
         }
       },
       "System.IO.Pipelines/6.0.0": {
@@ -1188,6 +1222,13 @@
       "path": "dialoghost.avalonia/0.7.5",
       "hashPath": "dialoghost.avalonia.0.7.5.nupkg.sha512"
     },
+    "DocX/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MMBkVQJebOu6RHWv3WXoLazvNTdn5PborEwMGfh2zSBRzJHZSDGQ2O7gsBHLN4OYEYjDVn5QH934kvel6jcP5g==",
+      "path": "docx/3.0.0",
+      "hashPath": "docx.3.0.0.nupkg.sha512"
+    },
     "HarfBuzzSharp/2.8.2.3": {
       "type": "package",
       "serviceable": true,
@@ -1328,6 +1369,13 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
+    "Microsoft.Office.Interop.Word/12.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z0IMfOwBhk2bu1VYHv1xXzc+6+zZO2uD82dFpub4YhaZ2CddBBE5kDTUh+9Zti2/VY6VS+gZ0U+UsrxOIQm+lw==",
+      "path": "microsoft.office.interop.word/12.0.0",
+      "hashPath": "microsoft.office.interop.word.12.0.0.nupkg.sha512"
+    },
     "Microsoft.Win32.SystemEvents/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1439,6 +1487,13 @@
       "sha512": "sha512-3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
       "path": "system.io/4.3.0",
       "hashPath": "system.io.4.3.0.nupkg.sha512"
+    },
+    "System.IO.Packaging/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OjtW5pGp1E7KE3ontBrzy+nSFJCM6pcbVDdo3gg4DauTfdtZKdeKvMVlADF4fSY+OfXWUp4qCvOSxIltt37LbA==",
+      "path": "system.io.packaging/4.5.0",
+      "hashPath": "system.io.packaging.4.5.0.nupkg.sha512"
     },
     "System.IO.Pipelines/6.0.0": {
       "type": "package",

@@ -377,6 +377,21 @@
           }
         }
       },
+      "DocX/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "5.0.2",
+          "System.IO.Packaging": "4.5.0"
+        },
+        "compile": {
+          "lib/net5.0/Xceed.Document.NET5.dll": {},
+          "lib/net5.0/Xceed.Words.NET5.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Xceed.Document.NET5.dll": {},
+          "lib/net5.0/Xceed.Words.NET5.dll": {}
+        }
+      },
       "HarfBuzzSharp/2.8.2.3": {
         "type": "package",
         "dependencies": {
@@ -862,6 +877,15 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.Office.Interop.Word/12.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net11/Microsoft.Office.Interop.Word.dll": {}
+        },
+        "runtime": {
+          "lib/net11/Microsoft.Office.Interop.Word.dll": {}
+        }
+      },
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
         "compile": {
@@ -1142,6 +1166,17 @@
           "ref/netstandard1.5/System.IO.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "System.IO.Packaging/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.IO.Packaging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IO.Packaging.dll": {}
         }
       },
       "System.IO.Pipelines/6.0.0": {
@@ -2022,6 +2057,26 @@
         "lib/netstandard2.0/DialogHost.Avalonia.xml"
       ]
     },
+    "DocX/3.0.0": {
+      "sha512": "MMBkVQJebOu6RHWv3WXoLazvNTdn5PborEwMGfh2zSBRzJHZSDGQ2O7gsBHLN4OYEYjDVn5QH934kvel6jcP5g==",
+      "type": "package",
+      "path": "docx/3.0.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "Xceed_Logo_Retina-400x400.png",
+        "docs/readme.md",
+        "docx.3.0.0.nupkg.sha512",
+        "docx.nuspec",
+        "lib/net40/Xceed.Document.NET.dll",
+        "lib/net40/Xceed.Words.NET.dll",
+        "lib/net5.0/Xceed.Document.NET5.dll",
+        "lib/net5.0/Xceed.Words.NET5.dll",
+        "tools/install.ps1"
+      ]
+    },
     "HarfBuzzSharp/2.8.2.3": {
       "sha512": "8MwXm9J4dXHuTdzPo29nHgDbt4+6P+RrPrH/qrxcERf29cpLlFbjvP3eFPwHmdUrl4KL2SHEZi2ZuQ5ndeIL1w==",
       "type": "package",
@@ -2692,6 +2747,18 @@
         "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.Office.Interop.Word/12.0.0": {
+      "sha512": "Z0IMfOwBhk2bu1VYHv1xXzc+6+zZO2uD82dFpub4YhaZ2CddBBE5kDTUh+9Zti2/VY6VS+gZ0U+UsrxOIQm+lw==",
+      "type": "package",
+      "path": "microsoft.office.interop.word/12.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net11/Microsoft.Office.Interop.Word.dll",
+        "microsoft.office.interop.word.12.0.0.nupkg.sha512",
+        "microsoft.office.interop.word.nuspec"
       ]
     },
     "Microsoft.Win32.SystemEvents/6.0.0": {
@@ -3455,6 +3522,30 @@
         "ref/xamarinwatchos10/_._",
         "system.io.4.3.0.nupkg.sha512",
         "system.io.nuspec"
+      ]
+    },
+    "System.IO.Packaging/4.5.0": {
+      "sha512": "OjtW5pGp1E7KE3ontBrzy+nSFJCM6pcbVDdo3gg4DauTfdtZKdeKvMVlADF4fSY+OfXWUp4qCvOSxIltt37LbA==",
+      "type": "package",
+      "path": "system.io.packaging/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net46/System.IO.Packaging.dll",
+        "lib/netstandard1.3/System.IO.Packaging.dll",
+        "lib/netstandard2.0/System.IO.Packaging.dll",
+        "ref/net46/System.IO.Packaging.dll",
+        "ref/net46/System.IO.Packaging.xml",
+        "ref/netstandard1.3/System.IO.Packaging.dll",
+        "ref/netstandard1.3/System.IO.Packaging.xml",
+        "ref/netstandard2.0/System.IO.Packaging.dll",
+        "ref/netstandard2.0/System.IO.Packaging.xml",
+        "system.io.packaging.4.5.0.nupkg.sha512",
+        "system.io.packaging.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.IO.Pipelines/6.0.0": {
@@ -4898,7 +4989,9 @@
       "Avalonia.Fonts.Inter >= 11.0.2",
       "Avalonia.Themes.Fluent >= 11.0.2",
       "Avalonia_Gif >= 1.0.0",
+      "DocX >= 3.0.0",
       "MessageBox.Avalonia >= 3.0.0",
+      "Microsoft.Office.Interop.Word >= 12.0.0",
       "Newtonsoft.Json >= 13.0.3",
       "System.IdentityModel.Tokens.Jwt >= 7.5.2"
     ]
@@ -4969,9 +5062,17 @@
             "target": "Package",
             "version": "[1.0.0, )"
           },
+          "DocX": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
           "MessageBox.Avalonia": {
             "target": "Package",
             "version": "[3.0.0, )"
+          },
+          "Microsoft.Office.Interop.Word": {
+            "target": "Package",
+            "version": "[12.0.0, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
@@ -5019,5 +5120,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"Microsoft.Office.Interop.Word 12.0.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "Microsoft.Office.Interop.Word",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

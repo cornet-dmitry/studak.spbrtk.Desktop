@@ -67,9 +67,17 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "DocX": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "MessageBox.Avalonia": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Microsoft.Office.Interop.Word": {
+              "target": "Package",
+              "version": "[12.0.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

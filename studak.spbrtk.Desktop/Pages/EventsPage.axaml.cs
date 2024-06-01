@@ -41,7 +41,7 @@ public partial class EventsPage : UserControl
         ActivistsNavBtn = this.Find<Button>("ActivistsNavBtn");
         EventsNavBtn = this.Find<Button>("EventsNavBtn");
         KpiNavBtn = this.Find<Button>("KpiNavBtn");
-        //DocsNavBtn = this.Find<Button>("DocsNavBtn");
+        DocsNavBtn = this.Find<Button>("DocsNavBtn");
         CreateEventBtn = this.Find<Button>("CreateEventBtn");
 
         EventSortComboBox = this.Find<ComboBox>("EventSortComboBox");

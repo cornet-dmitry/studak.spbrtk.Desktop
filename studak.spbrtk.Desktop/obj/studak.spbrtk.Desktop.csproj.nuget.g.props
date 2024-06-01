@@ -21,5 +21,6 @@
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\Дмитрий Хорунжий\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgAvalonia_BuildServices Condition=" '$(PkgAvalonia_BuildServices)' == '' ">C:\Users\Дмитрий Хорунжий\.nuget\packages\avalonia.buildservices\0.0.28</PkgAvalonia_BuildServices>
     <PkgAvalonia Condition=" '$(PkgAvalonia)' == '' ">C:\Users\Дмитрий Хорунжий\.nuget\packages\avalonia\11.0.2</PkgAvalonia>
+    <PkgDocX Condition=" '$(PkgDocX)' == '' ">C:\Users\Дмитрий Хорунжий\.nuget\packages\docx\3.0.0</PkgDocX>
   </PropertyGroup>
 </Project>
