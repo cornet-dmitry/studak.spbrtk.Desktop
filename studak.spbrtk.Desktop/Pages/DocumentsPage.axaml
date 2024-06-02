@@ -1,0 +1,116 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="studak.spbrtk.Desktop.Pages.DocumentsPage">
+    
+    <UserControl.Styles>
+        <Style Selector="TextBlock.h1">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="32"/>
+        </Style>
+        
+        <Style Selector="TextBlock.Headers">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Regular" />
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
+        <Style Selector="TextBlock.Values">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
+        <Style Selector="TextBlock.SocialMedia">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        
+        <Style Selector="Button.Nav">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="Background" Value="#8959EF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="CornerRadius" Value="50"/>
+        </Style>
+        
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#00FF0000" />
+        </Style>
+        
+    </UserControl.Styles>
+
+    
+    <Grid Background="#F4F4FC"
+          ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        
+        <ProgressBar Grid.Column="1" Grid.Row="0" 
+            x:Name="Loader"
+            Foreground="#8959EF"
+            IsIndeterminate="True"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Width="500" Height="50" 
+            IsVisible="False"/>
+        
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+               HorizontalAlignment="Left"
+               Source="../Assets/LeftBar.png"/>
+        
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                    Orientation="Vertical"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/activists-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="ActivistsNavBtn"
+                        Click="ActivistsNavBtn_OnClick"
+                        Content="Активисты"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/events-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="EventsNavBtn"
+                        Click="EventsNavBtn_OnClick"
+                        Content="Мероприятия"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/kpi-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="KpiNavBtn"
+                        Click="KpiNavBtn_OnClick"
+                        Content="Рейтинг"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 30">
+                <Image Source="../Assets/docs-nav-btn.png"
+                       Height="45"/>
+                <Button Classes="Nav"
+                        x:Name="DocsNavBtn"
+                        Content="Документы"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+    
+</UserControl>

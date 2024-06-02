@@ -180,5 +180,9 @@ public partial class ActivistsPage : UserControl
         LoadData();
     }
 
-    
+
+    private void DocsNavBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigation.NavigateTo(new DocumentsPage());
+    }
 }

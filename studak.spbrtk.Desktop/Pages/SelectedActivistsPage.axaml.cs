@@ -253,4 +253,9 @@ public partial class SelectedActivistsPage : UserControl
     {
         Navigation.NavigateTo(new EventCardPage(_event));
     }
+
+    private void DocsNavBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigation.NavigateTo(new DocumentsPage());
+    }
 }

@@ -95,6 +95,7 @@
                        Height="45"/>
                 <Button Classes="Nav"
                         x:Name="DocsNavBtn"
+                        Click="DocsNavBtn_OnClick"
                         Content="Документы"/>
             </StackPanel>
         </StackPanel>

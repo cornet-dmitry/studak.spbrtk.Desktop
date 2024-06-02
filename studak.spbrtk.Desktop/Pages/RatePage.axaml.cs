@@ -159,4 +159,9 @@ public partial class RatePage : UserControl
     {
         Navigation.NavigateTo(new ActivistsPage());
     }
+
+    private void DocsNavBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigation.NavigateTo(new DocumentsPage());
+    }
 }

@@ -296,4 +296,9 @@ public partial class EventCardPage : UserControl
     {
         Navigation.NavigateTo(new RatePage());
     }
+
+    private void DocsNavBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigation.NavigateTo(new DocumentsPage());
+    }
 }
