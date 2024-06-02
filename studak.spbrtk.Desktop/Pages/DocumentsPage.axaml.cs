@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -45,6 +46,7 @@ public partial class DocumentsPage : UserControl
         
         // Получение всех файлов в директории
         string[] files = Directory.GetFiles(absolutePath);
+        Array.Reverse(files);
         
         foreach (var file in files)
         {
@@ -149,6 +151,11 @@ public partial class DocumentsPage : UserControl
             p.Start();
             p.WaitForExit();
         }
+    }
+    
+    private void OpenConductorBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Process.Start("explorer.exe", absolutePath);
     }
 
     private void ActivistsNavBtn_OnClick(object? sender, RoutedEventArgs e)

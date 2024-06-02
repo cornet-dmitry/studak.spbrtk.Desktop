@@ -119,6 +119,8 @@
       <None Update="Documents\Templates\shablon-prikaza-rtk.docx">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Remove="Assets\open-in-conductor.png" />
+      <AvaloniaResource Include="Assets\open-in-conductor.png" />
     </ItemGroup>
 
 

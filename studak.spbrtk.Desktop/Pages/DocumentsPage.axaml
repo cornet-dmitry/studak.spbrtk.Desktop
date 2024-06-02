@@ -134,16 +134,14 @@
                        VerticalAlignment="Center"
                        Margin="50 0 0 0"/>
             
-            <ComboBox x:Name="EventSortComboBox"
-                      SelectedIndex="0"
-                      VerticalAlignment="Center"
-                      Margin="30 0 0 0"
-                      Width="350"
-                      Background="Transparent"
-                      BorderThickness="0">
-                <ComboBoxItem>сначала новые</ComboBoxItem>
-                <ComboBoxItem>сначала старые</ComboBoxItem>
-            </ComboBox>
+            <Button x:Name="OpenConductorBtn"
+                    Click="OpenConductorBtn_OnClick"
+                    Background="Transparent"
+                    Margin="65 0 0 0">
+                <Image Source="../Assets/open-in-conductor.png"
+                       Height="50"
+                       VerticalAlignment="Center"/>
+            </Button>
             
         </StackPanel>
         
@@ -158,6 +156,7 @@
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding}"
                                        VerticalAlignment="Center"
+                                       Width="600"
                                        Classes="Values"/>
                             <Button Background="Transparent"
                                     Margin="50 0 0 0"
