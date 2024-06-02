@@ -18,6 +18,7 @@
           "MessageBox.Avalonia": "3.0.0",
           "Microsoft.Office.Interop.Word": "12.0.0",
           "Newtonsoft.Json": "13.0.3",
+          "PrintDialogX": "2.1.2",
           "System.IdentityModel.Tokens.Jwt": "7.5.2"
         },
         "runtime": {
@@ -728,6 +729,17 @@
           }
         }
       },
+      "PrintDialogX/2.1.2": {
+        "dependencies": {
+          "WPF-UI": "3.0.0"
+        },
+        "runtime": {
+          "lib/net48/PrintDialogX.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
+          }
+        }
+      },
       "SkiaSharp/2.88.3": {
         "dependencies": {
           "SkiaSharp.NativeAssets.Win32": "2.88.3",
@@ -1070,6 +1082,7 @@
         }
       },
       "System.Threading.Tasks.Extensions/4.5.4": {},
+      "System.ValueTuple/4.5.0": {},
       "Tmds.DBus.Protocol/0.15.0": {
         "dependencies": {
           "System.IO.Pipelines": "6.0.0"
@@ -1078,6 +1091,17 @@
           "lib/net6.0/Tmds.DBus.Protocol.dll": {
             "assemblyVersion": "0.15.0.0",
             "fileVersion": "0.15.0.0"
+          }
+        }
+      },
+      "WPF-UI/3.0.0": {
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/net462/Wpf.Ui.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
           }
         }
       }
@@ -1390,6 +1414,13 @@
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
+    "PrintDialogX/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2A7ebVF60Q9N0cDGupEPY2FlrxXkGTU2Qnprwpj6nUt60LxpZVkZeME/R623QqsQNVcyzBALNJOXGg/r05rf6g==",
+      "path": "printdialogx/2.1.2",
+      "hashPath": "printdialogx.2.1.2.nupkg.sha512"
+    },
     "SkiaSharp/2.88.3": {
       "type": "package",
       "serviceable": true,
@@ -1677,12 +1708,26 @@
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
+    "System.ValueTuple/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
     "Tmds.DBus.Protocol/0.15.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-QVo/Y39nTYcCKBqrZuwHjXdwaky0yTQPIT3qUTEEK2MZfDtZWrJ2XyZ59zH8LBgB2fL5cWaTuP2pBTpGz/GeDQ==",
       "path": "tmds.dbus.protocol/0.15.0",
       "hashPath": "tmds.dbus.protocol.0.15.0.nupkg.sha512"
+    },
+    "WPF-UI/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YM4GtOJVRp90x6i4C8PhQc6Ic8zQz/1tt+Wrh5qNBm87jLBq/1LAB812sAlZtiVz5gLN74ERdihKI+/azElPqw==",
+      "path": "wpf-ui/3.0.0",
+      "hashPath": "wpf-ui.3.0.0.nupkg.sha512"
     }
   }
 }

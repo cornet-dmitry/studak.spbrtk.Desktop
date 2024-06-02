@@ -83,6 +83,10 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "PrintDialogX": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[7.5.2, )"

@@ -268,8 +268,16 @@ public partial class EventCardPage : UserControl
     
     private async void OrderBtn_OnClick(object? sender, RoutedEventArgs e)
     {
-            WordHelper wordHelper = new WordHelper();
-            wordHelper.GenerateWordFile(_event);
+        WordHelper wordHelper = new WordHelper();
+        var result = wordHelper.GenerateWordFile(_event);
+
+        if (result)
+        {
+            var box = MessageBoxManager
+                .GetMessageBoxStandard("Успех", "Приказ успешно создан!");
+
+            var resultMessageBox = await box.ShowAsync();
+        }
     }
     
     private void AddUserBtn_OnClick(object? sender, RoutedEventArgs e)

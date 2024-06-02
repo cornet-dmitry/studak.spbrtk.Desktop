@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uHed7BsR7zhS+Ol9kN0cxSer1updYrDyGMW4RrKejwAia1qbqgQ9lFE5pwELpUBYWyHwx4GrLU8t87ixWYhkkg==",
+  "dgSpecHash": "kr9MBFtcjj9tVcqG4kWmxjRLjYCd6AMb5uYBmESKMzIUn1E7K+5IiO2n8Qs5lZaSfLzuNyvtyolaq4R9Y+gL9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Дмитрий Хорунжий\\RiderProjects\\studak.spbrtk.Desktop\\studak.spbrtk.Desktop\\studak.spbrtk.Desktop.csproj",
   "expectedPackageFiles": [
@@ -47,6 +47,7 @@
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.office.interop.word\\12.0.0\\microsoft.office.interop.word.12.0.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\printdialogx\\2.1.2\\printdialogx.2.1.2.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\skiasharp\\2.88.3\\skiasharp.2.88.3.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.3\\skiasharp.nativeassets.linux.2.88.3.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.3\\skiasharp.nativeassets.macos.2.88.3.nupkg.sha512",
@@ -88,7 +89,9 @@
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\tmds.dbus.protocol\\0.15.0\\tmds.dbus.protocol.0.15.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\wpf-ui\\3.0.0\\wpf-ui.3.0.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
@@ -101,6 +104,26 @@
       "warningLevel": 1,
       "message": "Пакет \"Microsoft.Office.Interop.Word 12.0.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
       "libraryId": "Microsoft.Office.Interop.Word",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"PrintDialogX 2.1.2\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "PrintDialogX",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"WPF-UI 3.0.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "WPF-UI",
       "targetGraphs": [
         "net7.0"
       ]

@@ -99,72 +99,6 @@
             </StackPanel>
         </StackPanel>
         
-        <!--<StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
-                    Orientation="Vertical"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom">
-            <Image Source="../Assets/line-bottom-nav.png"
-                   Width="200"
-                   Margin="0 0 0 20"/>
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Center"
-                        Margin="0 0 0 50">
-                <Image Source="../Assets/settings-nav.png"
-                       Height="30"/>
-                <Button Classes="Nav"
-                        FontSize="20"
-                        x:Name="SettingsNavBtn"
-                        Content="Настройки"/>
-            </StackPanel>
-        </StackPanel>-->
-        
-        
-       <!--<StackPanel Grid.Column="1" Grid.Row="0"
-                    Margin="60 0 0 0"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    Orientation="Horizontal">
-        
-            <TextBox x:Name="SearchTextBox"
-                     Margin="10"
-                     Background="#E2E2FF"
-                     KeyUp="SearchTextBox_OnKeyUp"
-                     Watermark="Поиск"
-                     BorderThickness="0"
-                     VerticalContentAlignment="Center"
-                     HorizontalAlignment="Left"
-                     Height="55"
-                     Width="400"
-                     FontFamily="Montserrat"
-                     FontWeight="Light"
-                     FontSize="24">
-            </TextBox>
-            
-            
-            <StackPanel Orientation="Horizontal"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Right"
-                        Margin="10">
-                
-                <StackPanel Orientation="Vertical"
-                            Margin="20 0 0 0">
-                    <TextBlock Text="Иван Иванов"
-                               x:Name="UserNameTextBlock"
-                               Classes="h1"
-                               HorizontalAlignment="Right"
-                               FontSize="20"
-                               FontWeight="Bold"/>
-                    <TextBlock Text="Администратор"
-                               x:Name="UserStatusTextBlock"
-                               Classes="h1"
-                               HorizontalAlignment="Right"
-                               FontSize="16"
-                               FontWeight="Regular"/>
-                </StackPanel>
-            </StackPanel>
-            
-        </StackPanel>-->
-        
         <StackPanel Grid.Column="1" Grid.Row="1"
                     Margin="0 0 0 50"
                     Orientation="Horizontal">
@@ -192,54 +126,55 @@
                      Width="500" Height="50" 
                      IsVisible="False"/>
         
-        <StackPanel Grid.Column="1" Grid.Row="2"
-                    Orientation="Vertical"
-                    VerticalAlignment="Top"
-                    Margin="20 0 0 0">
-            <StackPanel Orientation="Horizontal">
-                <ComboBox Width="500"
-                          Height="50"
-                          FontFamily="Montserrat"
-                          FontSize="18"
-                          VerticalAlignment="Center"
-                          x:Name="UsersComboBox"/>
-                <Button HorizontalAlignment="Right"
-                        VerticalAlignment="Center"
-                        Margin="20 0 0 0"
-                        x:Name="AddListUsers"
-                        Click="AddListUsers_OnClick"
-                        Background="Transparent">
-                    <Image Source="../Assets/add-user-btn.png"
-                           Height="70"/>
-                </Button>
+        <ScrollViewer Grid.Column="1" Grid.Row="2">
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Top"
+                        Margin="20 0 0 0">
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox Width="500"
+                              Height="50"
+                              FontFamily="Montserrat"
+                              FontSize="18"
+                              VerticalAlignment="Center"
+                              x:Name="UsersComboBox"/>
+                    <Button HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Margin="20 0 0 0"
+                            x:Name="AddListUsers"
+                            Click="AddListUsers_OnClick"
+                            Background="Transparent">
+                        <Image Source="../Assets/add-user-btn.png"
+                               Height="70"/>
+                    </Button>
+                </StackPanel>
+                
+                <ListBox x:Name="SelectedUsersListBox"
+                         Margin="50"
+                         Width="700"
+                         HorizontalAlignment="Left"
+                         Background="Transparent">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Classes="Elements"
+                                               Width="600"
+                                               VerticalAlignment="Center"
+                                               Text="{Binding FullName}"/>
+                                    <Button Background="Transparent"
+                                            Click="DeleteButton_OnClick"
+                                            VerticalAlignment="Center">
+                                        <Image Source="../Assets/delete-btn.png"
+                                               Height="20"/>
+                                    </Button>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                
             </StackPanel>
-            
-            <ListBox x:Name="SelectedUsersListBox"
-                     Margin="50"
-                     Width="700"
-                     HorizontalAlignment="Left"
-                     Background="Transparent">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Border>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Classes="Elements"
-                                           Width="600"
-                                           VerticalAlignment="Center"
-                                           Text="{Binding FullName}"/>
-                                <Button Background="Transparent"
-                                        Click="DeleteButton_OnClick"
-                                        VerticalAlignment="Center">
-                                    <Image Source="../Assets/delete-btn.png"
-                                           Height="20"/>
-                                </Button>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            
-        </StackPanel>
+        </ScrollViewer>
     </Grid>
     
 </UserControl>

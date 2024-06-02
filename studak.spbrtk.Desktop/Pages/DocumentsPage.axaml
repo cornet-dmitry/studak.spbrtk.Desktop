@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:CompileBindings="False"
              x:Class="studak.spbrtk.Desktop.Pages.DocumentsPage">
     
     <UserControl.Styles>
@@ -24,10 +25,23 @@
             <Setter Property="FontSize" Value="24"/>
         </Style>
         
+        <Style Selector="TextBlock.ElementsValue">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        
         <Style Selector="TextBlock.SocialMedia">
             <Setter Property="FontFamily" Value="Montserrat" />
             <Setter Property="FontWeight" Value="Medium" />
             <Setter Property="FontSize" Value="18"/>
+        </Style>
+        
+        <Style Selector="ComboBox">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="FontSize" Value="20"/>
         </Style>
         
         <Style Selector="Button.Nav">
@@ -111,6 +125,57 @@
                         Content="Документы"/>
             </StackPanel>
         </StackPanel>
+        
+        <StackPanel Grid.Column="1" Grid.Row="1"
+                    Orientation="Horizontal">
+            
+            <TextBlock Classes="h1"
+                       Text="Документы"
+                       VerticalAlignment="Center"
+                       Margin="50 0 0 0"/>
+            
+            <ComboBox x:Name="EventSortComboBox"
+                      SelectedIndex="0"
+                      VerticalAlignment="Center"
+                      Margin="30 0 0 0"
+                      Width="350"
+                      Background="Transparent"
+                      BorderThickness="0">
+                <ComboBoxItem>сначала новые</ComboBoxItem>
+                <ComboBoxItem>сначала старые</ComboBoxItem>
+            </ComboBox>
+            
+        </StackPanel>
+        
+        <ListBox Grid.Column="1" Grid.Row="2"
+                 Margin="40 30 40 0"
+                 x:Name="DocumentsListBox"
+                 SelectionChanged="DocumentsListBox_OnSelectionChanged"
+                 Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding}"
+                                       VerticalAlignment="Center"
+                                       Classes="Values"/>
+                            <Button Background="Transparent"
+                                    Margin="50 0 0 0"
+                                    Click="PrintButton_OnClick"
+                                    VerticalAlignment="Center"
+                                    Content="Печать"/>
+                            <Button Background="Transparent"
+                                    Margin="20 0 0 0"
+                                    Click="DeleteButton_OnClick"
+                                    VerticalAlignment="Center">
+                                <Image Source="../Assets/delete-btn.png"
+                                       Height="20"/>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
     </Grid>
     
 </UserControl>
