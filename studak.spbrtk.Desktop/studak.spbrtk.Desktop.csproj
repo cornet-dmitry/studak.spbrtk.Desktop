@@ -121,6 +121,11 @@
       </None>
       <None Remove="Assets\open-in-conductor.png" />
       <AvaloniaResource Include="Assets\open-in-conductor.png" />
+      <None Remove="Assets\pencil-svgrepo-com.svg" />
+      <None Remove="Assets\edit-btn.png" />
+      <AvaloniaResource Include="Assets\edit-btn.png" />
+      <None Remove="Assets\save-data-btn.png" />
+      <AvaloniaResource Include="Assets\save-data-btn.png" />
     </ItemGroup>
 
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using Avalonia;
@@ -19,15 +20,35 @@ public partial class AddUserPage : UserControl
     private ProgressBar _loader;
 
     private readonly HttpClient _httpClient;
+
+    private static Activists _activists;
     
     public AddUserPage()
     {
         _httpClient = new HttpClient();
         InitializeComponent();
         
+        FIOTextBlock.Text = "ДОБАВИТЬ АКТИВИСТА";
         ActivistsNavBtn.FontWeight = FontWeight.ExtraBold;
+        SaveBtn.IsVisible = false;
+        CreateBtn.IsVisible = true;
         
         LoadComboBox();
+    }
+    
+    public AddUserPage(Activists activist)
+    {
+        _activists = activist;
+        _httpClient = new HttpClient();
+        InitializeComponent();
+        
+        FIOTextBlock.Text = "РЕДАКТИРОВАТЬ ДАННЫЕ";
+        ActivistsNavBtn.FontWeight = FontWeight.ExtraBold;
+        SaveBtn.IsVisible = true;
+        CreateBtn.IsVisible = false;
+        
+        LoadComboBox();
+        LoadData();
     }
     
     private void InitializeComponent()
@@ -41,6 +62,7 @@ public partial class AddUserPage : UserControl
         DocsNavBtn = this.Find<Button>("DocsNavBtn");
         BackArrowBtn = this.Find<Button>("BackArrowBtn");
         CreateBtn = this.Find<Button>("CreateBtn");
+        SaveBtn = this.Find<Button>("SaveBtn");
 
         SurnameTextBox = this.Find<TextBox>("SurnameTextBox");
         NameTextBox = this.Find<TextBox>("NameTextBox");
@@ -68,6 +90,7 @@ public partial class AddUserPage : UserControl
                 //преобразование json в строку
                 var responseValue = responce.Content.ReadAsStringAsync().Result;
                 var list = JsonConvert.DeserializeObject<List<UserStatus>>(responseValue);
+                list = list.OrderBy(x => x.Id).ToList();
                 
                 foreach (var VARIABLE in list)
                 {
@@ -85,6 +108,32 @@ public partial class AddUserPage : UserControl
 
         _loader.IsVisible = false;
     }
+
+    private async void LoadData()
+    {
+        SurnameTextBox.Text = _activists.Surname;
+        NameTextBox.Text = _activists.Name;
+        PatrTextBox.Text = _activists.Patronymic;
+        GroupTextBox.Text = _activists.Group;
+        DatePicker.SelectedDate = _activists.DateBirth;
+        PhoneTextBox.Text = _activists.Phone;
+        EmailTextBox.Text = _activists.Email;
+        VKTextBox.Text = _activists.VkLink;
+        TGTextBox.Text = _activists.TgLink;
+        
+        var userData = new FormUrlEncodedContent(new Dictionary<string, string>
+        {
+            { "userId", _activists.Id.ToString() }
+        });
+
+        var responceUsers =
+            await _httpClient.PostAsync(apiUrl + "/User/GetUserByID", userData);
+
+        var userContent = await responceUsers.Content.ReadAsStringAsync();
+        var usertList = JsonConvert.DeserializeObject<List<Activists>>(userContent).FirstOrDefault();
+
+        StatusComboBox.SelectedIndex = Convert.ToInt32(usertList.Status) - 1;
+    }
     
     private async void CreateBtn_OnClick(object? sender, RoutedEventArgs e)
     {
@@ -100,7 +149,7 @@ public partial class AddUserPage : UserControl
                     { "patronymic", PatrTextBox.Text},
                     { "group", GroupTextBox.Text },
                     { "dateBirth", DatePicker.SelectedDate.ToString() },
-                    { "phone", PhoneTextBox.Text },
+                    { "phone", _activists.Phone },
                     { "email", EmailTextBox.Text },
                     { "vkLink", VKTextBox.Text },
                     { "tgLink", TGTextBox.Text },
@@ -111,6 +160,46 @@ public partial class AddUserPage : UserControl
                 });
             
                 var response = await _httpClient.PostAsync($"{this.apiUrl}/User/AddUser", userData);
+            
+                Navigation.NavigateTo(new ActivistCardPage(_activists));
+            }
+            catch (Exception exception)
+            {
+                MessageBox messageBox = new MessageBox(exception.Message);
+                messageBox.Show();
+            }
+        }
+
+        _loader.IsVisible = false;
+    }
+    
+    private async void SaveBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        _loader.IsVisible = true;
+        
+        if (CheckData())
+        {
+            try
+            {
+                var userData = new FormUrlEncodedContent(new Dictionary<string, string>
+                {
+                    /*{ "id", _activists.Id.ToString()},*/
+                    { "surname", SurnameTextBox.Text},
+                    { "name", NameTextBox.Text},
+                    { "patronymic", PatrTextBox.Text},
+                    { "group", GroupTextBox.Text },
+                    { "dateBirth", DatePicker.SelectedDate.ToString() },
+                    { "phone", _activists.Phone },
+                    { "email", EmailTextBox.Text },
+                    { "vkLink", VKTextBox.Text },
+                    { "tgLink", TGTextBox.Text },
+                    { "kpi", _activists.Kpi.ToString() },
+                    { "status", (StatusComboBox.SelectedIndex + 1).ToString() },
+                    { "orderNumber", "0" },
+                    { "startDate", DateTime.Now.ToString() }
+                });
+            
+                var response = await _httpClient.PostAsync($"{this.apiUrl}/User/EditUser/{_activists.Id}", userData);
             
                 Navigation.NavigateTo(new ActivistsPage());
             }
@@ -152,7 +241,14 @@ public partial class AddUserPage : UserControl
 
     private void BackArrowBtn_OnClick(object? sender, RoutedEventArgs e)
     {
-        Navigation.NavigateTo(new ActivistsPage());
+        if (_activists is null)
+        {
+            Navigation.NavigateTo(new ActivistsPage());
+        }
+        else
+        {
+            Navigation.NavigateTo(new ActivistCardPage(_activists));
+        }
     }
 
     private void EventsNavBtn_OnClick(object? sender, RoutedEventArgs e)

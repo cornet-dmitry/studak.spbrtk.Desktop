@@ -121,6 +121,11 @@ public partial class ActivistCardPage : UserControl
             messageBox.Show();
         }
     }
+    
+    private void EditUserBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigation.NavigateTo(new AddUserPage(_activistsList));
+    }
 
     private void ActivistsNavBtn_OnClick(object? sender, RoutedEventArgs e)
     {

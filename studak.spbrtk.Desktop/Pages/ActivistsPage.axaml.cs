@@ -75,6 +75,7 @@ public partial class ActivistsPage : UserControl
                 //преобразование json в строку
                 var responseValue = responseManagers.Content.ReadAsStringAsync().Result;
                 var list = JsonConvert.DeserializeObject<List<Activists>>(responseValue);
+                list = list.OrderByDescending(x => x.Status).ToList();
                 
                 foreach (var VARIABLE in list)
                 {

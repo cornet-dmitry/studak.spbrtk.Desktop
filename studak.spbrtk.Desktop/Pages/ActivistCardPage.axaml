@@ -14,6 +14,12 @@
             <Setter Property="FontSize" Value="32"/>
         </Style>
         
+        <Style Selector="TextBlock.Light">
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
         <Style Selector="TextBlock.Headers">
             <Setter Property="FontFamily" Value="Montserrat" />
             <Setter Property="FontWeight" Value="Regular" />
@@ -144,11 +150,24 @@
                 <Image Source="../Assets/back-arrow-btn.png"
                        Height="50"/>
             </Button>
+            
             <TextBlock x:Name="FIOTextBlock"
                        Margin="10 0 0 0"
                        VerticalAlignment="Center"
                        Text="Фамилия Имя Отчество"
                        Classes="h1"/>
+            
+            <Image Source="../Assets/edit-btn.png"
+                   Margin="50 0 0 0"
+                   Height="32"/>
+            <Button Content="Редактировать данные"
+                    x:Name="EditUserBtn"
+                    Click="EditUserBtn_OnClick"
+                    FontFamily="Montserrat"
+                    FontSize="20"
+                    Classes="Light"
+                    Background="Transparent"
+                    VerticalAlignment="Center"/>
         </StackPanel>
         
         <StackPanel Grid.Column="1" Grid.Row="1"
